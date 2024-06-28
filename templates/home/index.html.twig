@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block metaTag %}
-    <meta name="Accueil" content="Les Ruchers des Gobelins produisent du miel 100% local normand dans le respect des abeilles et de la biodiversité.">
+	<meta name="Accueil" content="Les Ruchers des Gobelins produisent du miel 100% local normand dans le respect des abeilles et de la biodiversité.">
 {% endblock %}
 
-{% block title %}Apiculteur Normand 100% local 100% respect des abeilles | Les Ruchers des Gobelins{% endblock %}
+{% block title %}Apiculteur Normand 100% local 100% respect des abeilles | Les Ruchers des Gobelins
+{% endblock %}
 
 {% block stylesheets %}
 	{# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> #}
@@ -11,23 +12,31 @@
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/> {{ encore_entry_link_tags('app') }}
-	<link rel="stylesheet" href="{{asset('./assets/css/style.css')}}">
-	<link rel="stylesheet" href="{{asset('./assets/css/homeStyle.css')}}">
 
 {% endblock %}
 
 {% block body %}
-<section>
+	<section class="titre">
+		<div class="backgroundMobile">
+			<img src="{{asset('./img/bees-header-d.webp')}}" alt="bees">
+		</div>
+		<h1>Les Ruchers des Gobelins</h1>
 
-<h1>c'est un h1</h1>
-<h2>c'est un h2</h2>
-<h3>c'est un h3</h3>
-<p>c'est du texte Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor sequi accusamus ex assumenda, odit iste impedit nostrum et dolore facilis culpa, laudantium quisquam maiores, eos dolores consequuntur sit rerum in!</p>
+		<p class="accroche">Valeurs : 1 phrase succinte, quelques mots qui tiennent sur 1 ligne</p>
 
-<a href="#" class="btnOk">Voir plus</a>
+		<div class="imagesTitre">
+			<div class="dfCenter">
+				<div class="arrow-d">
+					<img src="{{asset('./img/arrow-d.webp')}}" alt="arrow"></div>
+				<div class="arrow-m">
+					<img src="{{asset('./img/arrow-m.webp')}}" alt="arrow"></div>
+			</div>
+			<div class="dfCenter">
+				<div class="imageTitre">
+					<img src="{{asset('./img/bees-header-d.webp')}}" alt="bees"></div>
+			</div>
+		</div>
 
-<img src="{{asset('./assets/img/honey-bee-3744527_1280.jpg')}}" alt="">
-
-</section>
+	</section>
 
 {% endblock %}

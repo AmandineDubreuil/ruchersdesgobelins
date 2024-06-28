@@ -1,3 +1,121 @@
-body {
-    background-color: skyblue;
-}
+@font-face {
+    font-family: "MedievalSharp";
+    src: url(../font/medieval/MedievalSharp-Book.ttf);
+  }
+  @font-face {
+    font-family: "MedievalSharpBold";
+    src: url(../font/medieval/MedievalSharp-Bold.ttf);
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url(../font/inter/Inter-Regular.ttf);
+  }
+  @font-face {
+    font-family: "InterBold";
+    src: url(../font/inter/Inter-Bold.ttf);
+  }
+  
+  :root {
+    --color-one: #faeb39;
+    --color-one-light: #fff;
+    --color-one-extralight: #fff;
+  
+    --color-two: #488505;
+  
+    --color-three: #86b24e;
+    --color-three-dark: #769b44;
+  
+    --color-four: #cacf9e;
+  
+    --color-five: #fff;
+  
+    --color-six: #000;
+  }
+  
+  /* INITIALISATION */
+  
+  * {
+    margin: 0;
+    padding: 0;
+    /* background-color: transparent; */
+    box-sizing: border-box;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    color: var(--color-six);
+    font-size: 1rem;
+    text-decoration: none;
+    list-style: none;
+  }
+  /* symfony */
+  .sf-toolbar-clearer {
+    display: none !important;
+  }
+  
+  /* fin symfony */
+  
+  /* Général */
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  section {
+    padding: 1rem 2rem;
+  }
+  /* fin Général */
+  
+  /* Display */
+  .dfCenter {
+   
+    display: flex;
+    justify-content: center;
+  }
+  /* fin Display */
+  
+  /* TITRES */
+  
+  h1 {
+    padding: 1rem 0;
+    font-family: "MedievalSharpBold", Georgia, "Times New Roman", Times, serif;
+    font-size: 3rem;
+    color: var(--color-two);
+  }
+  h2 {
+      padding: 1rem 0;
+      font-family: "MedievalSharpBold", Georgia, "Times New Roman", Times, serif;
+      font-size: 2rem;
+      color: var(--color-two);
+    }
+  
+    /* BOUTONS CTA */
+  
+    .btnOk{
+      display: inline-block;
+      width: auto;
+      height: auto;
+      margin: .5rem 0;
+      padding: .3rem .7rem;
+      font-size: 1rem;
+      background: linear-gradient(315deg, transparent 10%, var(--color-three) 10%);
+      border: 0;
+      color: #fff;
+      outline: transparent;
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+  
+    }
+  .btnOk:hover, .btnOk:focus {
+      background: linear-gradient(315deg, transparent 10%, var(--color-three-dark) 10%);
+  
+  }
+  
+    /* ********************
+    
+    FORMAT DESKTOP
+    
+    ***************/
+  
+    @media screen and (min-width: 576px) {
+  
+    }
