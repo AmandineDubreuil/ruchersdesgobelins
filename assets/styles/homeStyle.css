@@ -19,14 +19,12 @@
   position: absolute;
   bottom: 2rem;
   width: calc(100% - 4rem);
-
 }
 #home .arrow-m {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50px;
-
 }
 #home .arrow-d {
   display: none;
@@ -35,6 +33,36 @@
   display: none;
 }
 /* fin entête */
+
+/* présentation */
+
+#home .presentation .mapGeoportail {
+  margin-top: 2rem;
+}
+/* fin présentation */
+
+/* histoire / valeurs */
+#home .histoire p {
+  margin-bottom: 2rem;
+}
+
+#home .valeurs {
+  margin: 2rem auto;
+}
+#home .histoire .valeurs p {
+  margin-bottom: 0;
+}
+
+
+#home .valeurs .texteValeurs {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+#home .valeurs .texteValeurs p {
+  padding-left: 0.5rem;
+}
+/* histoire / valeurs */
 
 /* ********************
   
@@ -77,5 +105,29 @@
   }
 
   /* fin entête */
+  /* histoire / valeurs */
+
+  #home .valeurs .texteValeurs {
+    width: 300px;
+    justify-content: center;
+  }
+  #home .valeurs .ligne1Valeurs {
+    padding-bottom: 1rem;
+    margin: auto;
+  }
+  #home .valeurs .ligne2Valeurs,
+  #home .valeurs .ligne3Valeurs {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  #home .valeurs .ligne2Valeurs {
+    justify-content: space-between;
+  }
+  #home .valeurs .ligne3Valeurs {
+    padding-top: 1rem;
+    justify-content: center;
+  }
+  /* histoire / valeurs */
 }
 /* fin format Desktop */

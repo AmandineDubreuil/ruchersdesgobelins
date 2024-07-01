@@ -16,26 +16,113 @@
 {% endblock %}
 
 {% block body %}
-<main id="home">
-	<section class="titre">
-		
-		<h1>Les Ruchers des Gobelins</h1>
+	<main
+		id="home">
+		{#  section titre #}
+		<section class="titre">
 
-		<p class="accroche">Valeurs : 1 phrase succinte, quelques mots qui tiennent sur 1 ligne</p>
+			<h1>Les Ruchers des Gobelins</h1>
 
-		<div class="imagesTitre">
-			<div class="dfCenter">
-				<div class="arrow-d">
-					<img src="{{asset('./img/arrow-d.webp')}}" alt="arrow"></div>
-				<div class="arrow-m">
-					<img src="{{asset('./img/arrow-m.webp')}}" alt="arrow"></div>
+			<p class="accroche">Valeurs : 1 phrase succinte, quelques mots qui tiennent sur 1 ligne</p>
+
+			<div class="imagesTitre">
+				<div class="dfCenter">
+					<div class="arrow-d">
+						<img src="{{asset('./img/arrow-d.webp')}}" alt="arrow"></div>
+					<div class="arrow-m">
+						<img src="{{asset('./img/arrow-m.webp')}}" alt="arrow"></div>
+				</div>
+				<div class="dfCenter">
+					<div class="imageTitre">
+						<img src="{{asset('./img/bees-header-d.webp')}}" alt="bees"></div>
+				</div>
 			</div>
-			<div class="dfCenter">
-				<div class="imageTitre">
-					<img src="{{asset('./img/bees-header-d.webp')}}" alt="bees"></div>
-			</div>
-		</div>
 
-	</section>
-</main>
+		</section>
+		{# fin section titre #}
+
+		{#  section présentation #}
+		<section class="presentation backgroundImage">
+			<h2>Présentation</h2>
+			<div
+				class="texteImg">
+				{# image #}
+				<div class="dfCenter">
+					<div>
+						<img src="{{asset('./img/apiculteur-300px.webp')}}" alt="apiculteur">
+
+					</div>
+				</div>
+				{# fin image #}
+				{# texte #}
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam magni ad veritatis. Quisquam quod minus voluptate? Earum laboriosam perferendis non harum reiciendis temporibus impedit officia? Sunt fugit sint amet excepturi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, libero fugiat. Iste dolorum, accusamus quod accusantium velit nemo laudantium suscipit magnam itaque sapiente cum voluptas maxime, minima eius at inventore?
+				</p>
+				{# fin texte #}
+			</div>
+			{# image geoportail #}
+			<div class="dfCenter mapGeoportail">
+				<iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=1.3044431899716489,49.08707339636089&z=11&l0=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR.CV::GEOPORTAIL:OGC:WMTS(1)&v1=ADMIN_EXPRESS::GEOPORTAIL:GPP:TMS(1)&l2=GEOGRAPHICALNAMES.NAMES::GEOPORTAIL:OGC:WMTS(1)&d3=5200741(1)&permalink=yes" allowfullscreen></iframe>
+			</div>
+			{# fin image geoportail #}
+
+		</section>
+		{# fin section présentation #}
+
+		{# section histoire #}
+		<section class="histoire">
+			<h2>Histoire, valeurs et missions</h2>
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sapiente, minus, ab assumenda possimus, quaerat accusantium perspiciatis doloribus numquam maiores nobis molestias sint. Nobis nemo impedit temporibus exercitationem ipsam voluptas.
+																			Quibusdam autem magni quasi nobis? Explicabo delectus doloribus eum aspernatur, itaque hic rem sint totam quidem natus nihil a distinctio? Enim ad placeat, eius culpa fugiat officiis ut excepturi inventore.</p>
+			{# valeurs #}
+			<div class="imgMobile">
+				<img src="{{asset('./img/abeille-fleur-300px.webp')}}" alt="abeille sur une fleur">
+
+			</div>
+			<div class="dfCenter valeurs">
+				<div>
+
+					{# 1ère ligne #}
+					<div class="texteValeurs ligne1Valeurs">
+						<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+						<p>Valeur 1</p>
+					</div>
+
+					{# fin 1ère ligne #}
+					{# 2ème ligne #}
+					<div class="ligne2Valeurs">
+						<div class="texteValeurs">
+							<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+							<p>Valeur 2</p>
+						</div>
+						<div class="imgDesktop">
+							<img src="{{asset('./img/abeille-fleur-300px.webp')}}" alt="abeille sur une fleur">
+
+						</div>
+						<div class="texteValeurs">
+							<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+							<p>Valeur 3</p>
+						</div>
+					</div>
+					{# fin 2ème ligne #}
+					{# 3ème ligne #}
+					<div class="ligne3Valeurs">
+						<div class="texteValeurs">
+							<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+							<p>Valeur 4</p>
+						</div>
+						<div class="texteValeurs">
+							<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+							<p>Valeur 5</p>
+						</div>
+					</div>
+					{# fin 3ème ligne #}
+				</div>
+				{# fin valeurs #}
+			</div>
+		</section>
+
+		{# fin section histoire #}
+
+	</main>
 {% endblock %}
