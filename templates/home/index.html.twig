@@ -43,108 +43,144 @@
 
 		{#  section présentation #}
 		<section class="presentation backgroundImage">
-			<h2>Présentation</h2>
-			<div
-				class="texteImg">
-				{# image #}
-				<div class="dfCenter">
-					<div>
-						<img src="{{asset('./img/apiculteur-300px.webp')}}" alt="apiculteur">
+			<div class="widthDesktop">
+				<h2>Présentation</h2>
+				<div
+					class="texteImg">
+					{# image #}
+					<div class="dfCenter">
+						<div>
+							<img src="{{asset('./img/apiculteur-300px.webp')}}" alt="apiculteur">
 
+						</div>
 					</div>
+					{# fin image #}
+					{# texte #}
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam magni ad veritatis. Quisquam quod minus voluptate? Earum laboriosam perferendis non harum reiciendis temporibus impedit officia? Sunt fugit sint amet excepturi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, libero fugiat. Iste dolorum, accusamus quod accusantium velit nemo laudantium suscipit magnam itaque sapiente cum voluptas maxime, minima eius at inventore?
+					</p>
+					{# fin texte #}
 				</div>
-				{# fin image #}
-				{# texte #}
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam magni ad veritatis. Quisquam quod minus voluptate? Earum laboriosam perferendis non harum reiciendis temporibus impedit officia? Sunt fugit sint amet excepturi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, libero fugiat. Iste dolorum, accusamus quod accusantium velit nemo laudantium suscipit magnam itaque sapiente cum voluptas maxime, minima eius at inventore?
-				</p>
-				{# fin texte #}
+				{# image geoportail #}
+				<div class="dfCenter mapGeoportail">
+					<iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=1.3044431899716489,49.08707339636089&z=11&l0=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR.CV::GEOPORTAIL:OGC:WMTS(1)&v1=ADMIN_EXPRESS::GEOPORTAIL:GPP:TMS(1)&l2=GEOGRAPHICALNAMES.NAMES::GEOPORTAIL:OGC:WMTS(1)&d3=5200741(1)&permalink=yes" allowfullscreen></iframe>
+				</div>
+				{# fin image geoportail #}
 			</div>
-			{# image geoportail #}
-			<div class="dfCenter mapGeoportail">
-				<iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=1.3044431899716489,49.08707339636089&z=11&l0=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR.CV::GEOPORTAIL:OGC:WMTS(1)&v1=ADMIN_EXPRESS::GEOPORTAIL:GPP:TMS(1)&l2=GEOGRAPHICALNAMES.NAMES::GEOPORTAIL:OGC:WMTS(1)&d3=5200741(1)&permalink=yes" allowfullscreen></iframe>
-			</div>
-			{# fin image geoportail #}
-
 		</section>
 		{# fin section présentation #}
 
 		{# section histoire #}
 		<section class="histoire">
-			<h2>Histoire, valeurs et missions</h2>
+			<div class="widthDesktop">
+				<h2>Histoire, valeurs et missions</h2>
 
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sapiente, minus, ab assumenda possimus, quaerat accusantium perspiciatis doloribus numquam maiores nobis molestias sint. Nobis nemo impedit temporibus exercitationem ipsam voluptas.
-																			Quibusdam autem magni quasi nobis? Explicabo delectus doloribus eum aspernatur, itaque hic rem sint totam quidem natus nihil a distinctio? Enim ad placeat, eius culpa fugiat officiis ut excepturi inventore.</p>
-			{# valeurs #}
-			<div class="imgMobile">
-				<img src="{{asset('./img/abeille-fleur-300px.webp')}}" alt="abeille sur une fleur">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sapiente, minus, ab assumenda possimus, quaerat accusantium perspiciatis doloribus numquam maiores nobis molestias sint. Nobis nemo impedit temporibus exercitationem ipsam voluptas.
+																																	Quibusdam autem magni quasi nobis? Explicabo delectus doloribus eum aspernatur, itaque hic rem sint totam quidem natus nihil a distinctio? Enim ad placeat, eius culpa fugiat officiis ut excepturi inventore.</p>
+				{# valeurs #}
+				<div class="imgMobile">
+					<img src="{{asset('./img/abeille-fleur-300px.webp')}}" alt="abeille sur une fleur">
 
-			</div>
-			<div class="dfCenter valeurs">
-				<div>
-
-					{# 1ère ligne #}
-					<div class="texteValeurs ligne1Valeurs">
-						<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
-						<p>Valeur 1</p>
-					</div>
-
-					{# fin 1ère ligne #}
-					{# 2ème ligne #}
-					<div class="ligne2Valeurs">
-						<div class="texteValeurs">
-							<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
-							<p>Valeur 2</p>
-						</div>
-						<div class="imgDesktop">
-							<img src="{{asset('./img/abeille-fleur-300px.webp')}}" alt="abeille sur une fleur">
-
-						</div>
-						<div class="texteValeurs">
-							<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
-							<p>Valeur 3</p>
-						</div>
-					</div>
-					{# fin 2ème ligne #}
-					{# 3ème ligne #}
-					<div class="ligne3Valeurs">
-						<div class="texteValeurs">
-							<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
-							<p>Valeur 4</p>
-						</div>
-						<div class="texteValeurs">
-							<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
-							<p>Valeur 5</p>
-						</div>
-					</div>
-					{# fin 3ème ligne #}
 				</div>
-				{# fin valeurs #}
+				<div class="dfCenter valeurs">
+					<div>
+
+						{# 1ère ligne #}
+						<div class="texteValeurs ligne1Valeurs">
+							<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+							<p>Valeur 1</p>
+						</div>
+
+						{# fin 1ère ligne #}
+						{# 2ème ligne #}
+						<div class="ligne2Valeurs">
+							<div class="texteValeurs">
+								<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+								<p>Valeur 2</p>
+							</div>
+							<div class="imgDesktop">
+								<img src="{{asset('./img/abeille-fleur-300px.webp')}}" alt="abeille sur une fleur">
+
+							</div>
+							<div class="texteValeurs">
+								<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+								<p>Valeur 3</p>
+							</div>
+						</div>
+						{# fin 2ème ligne #}
+						{# 3ème ligne #}
+						<div class="ligne3Valeurs">
+							<div class="texteValeurs">
+								<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+								<p>Valeur 4</p>
+							</div>
+							<div class="texteValeurs">
+								<div><img src="{{asset('./img/arrow-50px.webp')}}" alt="tourbillon"></div>
+								<p>Valeur 5</p>
+							</div>
+						</div>
+						{# fin 3ème ligne #}
+					</div>
+					{# fin valeurs #}
+				</div>
 			</div>
 		</section>
 		{# fin section histoire #}
 
-{# section produits #}
-<section class="produits backgroundImage">
-<h2>Produits</h2>
-<div
-				class="texteImg">
-		
-				{# texte #}
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam magni ad veritatis. Quisquam quod minus voluptate? Earum laboriosam perferendis non harum reiciendis temporibus impedit officia? Sunt fugit sint amet excepturi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, libero fugiat. Iste dolorum, accusamus quod accusantium velit nemo laudantium suscipit magnam itaque sapiente cum voluptas maxime, minima eius at inventore?
-				</p>
-				{# fin texte #}	
+		{# section produits #}
+		<section class="produits backgroundImage">
+			<div class="widthDesktop">
+				<h2>Produits</h2>
+				<div
+					class="texteImg">
+
+					{# texte #}
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam magni ad veritatis. Quisquam quod minus voluptate? Earum laboriosam perferendis non harum reiciendis temporibus impedit officia? Sunt fugit sint amet excepturi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, libero fugiat. Iste dolorum, accusamus quod accusantium velit nemo laudantium suscipit magnam itaque sapiente cum voluptas maxime, minima eius at inventore?
+					</p>
+					{# fin texte #}
 					{# image #}
-				<div class="dfCenter">
-					<div>
-						<img src="{{asset('./img/pots-de-miel-300px.webp')}}" alt="pots de miel">
+					<div class="dfCenter">
+						<div>
+							<img src="{{asset('./img/pots-de-miel-300px.webp')}}" alt="pots de miel">
 
+						</div>
 					</div>
+					{# fin image #}
 				</div>
-				{# fin image #}
 			</div>
-</section>
+		</section>
 
-{# fin section produits #}
+		{# fin section produits #}
 
+		{# section process #}
+		<section class="process">
+			<div class="widthDesktop">
+				<h2>Processus de production</h2>
+				<div
+					class="texteImg">
+					{# image #}
+					<div class="dfCenter">
+						<div>
+							<img src="{{asset('./img/rayon-miel-300px.webp')}}" alt="Rayon de miel">
+
+						</div>
+					</div>
+					{# fin image #}
+					{# texte #}
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam magni ad veritatis. Quisquam quod minus voluptate? Earum laboriosam perferendis non harum reiciendis temporibus impedit officia? Sunt fugit sint amet excepturi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, libero fugiat. Iste dolorum, accusamus quod accusantium velit nemo laudantium suscipit magnam itaque sapiente cum voluptas maxime, minima eius at inventore?
+					</p>
+					{# fin texte #}
+
+				</div>
+			</div>
+		</section>
+		{# fin section process #}
+
+		{# section articles #}
+		<section class="articles backgroundImage">
+			<div class="widthDesktop">
+				<h2>Derniers articles</h2>
+			</div>
+		</section>
+		{# fin section articles #}
 	</main>
 {% endblock %}
