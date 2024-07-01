@@ -62,8 +62,13 @@
 #home .valeurs .texteValeurs p {
   padding-left: 0.5rem;
 }
-/* histoire / valeurs */
+/* fin histoire / valeurs */
 
+/* produits */
+#home .produits p {
+  padding-bottom: 1rem;
+}
+/* fin produits */
 /* ********************
   
   FORMAT DESKTOP
