@@ -96,10 +96,12 @@ img {
 /* TITRES */
 
 h1 {
+  margin-top: 3rem;
   padding: 1rem 0;
   font-family: "MedievalSharpBold", Georgia, "Times New Roman", Times, serif;
   font-size: 3rem;
   color: var(--color-two);
+
 }
 h2 {
   padding: 1rem 0;
