@@ -1,20 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> #}
-        {% block stylesheets %}
-        
-        {% endblock %}
+		<title>
+			{% block title %}Les Ruchers des Gobelins
+			{% endblock %}
+		</title>
+		{# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> #}
+		{% block stylesheets %}{% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		{# {% block javascripts %}
+					{% block importmap %}
+						{{ importmap('app') }}
+					{% endblock %}
+					<script src="{{asset('./js/menu.js')}}"></script>
+		
+				{% endblock %} #}
+	</head>
+	<body>
+
+		{# header #}
+		{# menu #}
+			<header class="menu"> <div class="navbar-fixed">
+				<nav class="navbar">
+					<div class="navbar-head">
+						<div class="burger">
+							<i class="fa-solid fa-bars"></i>
+						</div>
+						<div class="close dnone">
+							<i class="fa-solid fa-xmark"></i>
+						</div>
+						<a href="{{path('app_home')}}" class="navbar-brand" id="logo"><img src="{{asset('./img/logo-80px.svg')}}" alt="Logo Les Ruchers des Gobelins"></a>
+
+						<a href="#" class="btnContact">Contact</a>
+
+
+					</div>
+					<ul class="navbar-menu hideNav">
+						<li>
+							<a class="navbar-link" href="{{path('app_home')}}">Accueil</a>
+						</li>
+						<li>
+							<a class="navbar-link" href="#">Produits</a>
+						</li>
+						<li>
+							<a class="navbar-link" href="#">Actualités</a>
+						</li>
+
+
+						{% if is_granted('ROLE_ADMIN') %}
+							<li>
+								{# <a class="navbar-link" href="{{path('admin')}}">
+																									Admin
+																								</a> #}
+							</li>
+						{% endif %}
+						{% if is_granted('ROLE_USER') %}
+							<li>
+								{# <a class="navbar-link" href="{{path('app_user_index')}}">
+																									Mon compte
+																								</a> #}
+							</li>
+						{% endif %}
+
+					</ul>
+
+				</nav>
+<div class="reassurance">
+<ul>
+<li><div ><img src="{{asset('./img/no-plane-20px.svg')}}" alt="no plane"></div><p>Pas d'avion</p></li>
+<li><div ><img src="{{asset('./img/no-truck-20px.svg')}}" alt="no truck"></div><p>Pas de camion</p></li>
+<li><div ><img src="{{asset('./img/pot-miel-20px.svg')}}" alt="honey"></div><p>100% miel naturel</p></li>
+<li><div ><img src="{{asset('./img/drapeau-france-20px.svg')}}" alt="France"></div><p>100% normand</p></li>
+</ul>
+</div>
+			</div>
+
+			{# **************
+																																																				message flash 
+																																																		*****************#}
+
+			{# {% include "_partials/_flash.html.twig" %}
+									{% if app.user and app.user.isverified == false %}
+										<div class="alert-warning" role="alert">
+											<div class="alert-message">
+												<strong>Votre compte n'est pas encore activé</strong>. Renvoyer le
+												<a href="{{ path('app_resend_verif') }}">lien d'activation</a>
+											</div>
+										</div>
+									{% endif %} #}
+		</header>
+		{# fin menu #}
+		{# fin header #}
+
+		{% block body %}{% endblock %}
+
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+			<script src="{{asset('./js/menu.js')}}"></script>
+
+		{% endblock %}
+	</body>
 </html>
