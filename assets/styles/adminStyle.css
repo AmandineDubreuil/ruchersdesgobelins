@@ -1,0 +1,24 @@
+#login section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#login form .connexionForm {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#login form .connexionForm label {
+
+    margin-bottom: .5rem;
+}
+
+#login form .connexionForm input {
+    padding: .3rem .5rem;
+    min-width: 300px;
+    max-width: 500px;
+}
