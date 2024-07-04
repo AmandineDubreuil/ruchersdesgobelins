@@ -12,12 +12,12 @@
 		{% block stylesheets %}{% endblock %}
 
 		{# {% block javascripts %}
-					{% block importmap %}
-						{{ importmap('app') }}
-					{% endblock %}
-					<script src="{{asset('./js/menu.js')}}"></script>
-		
-				{% endblock %} #}
+							{% block importmap %}
+								{{ importmap('app') }}
+							{% endblock %}
+							<script src="{{asset('./js/menu.js')}}"></script>
+				
+						{% endblock %} #}
 	</head>
 	<body>
 
@@ -53,44 +53,61 @@
 						{% if is_granted('ROLE_ADMIN') %}
 							<li>
 								{# <a class="navbar-link" href="{{path('admin')}}">
-																									Admin
-																								</a> #}
+																																	Admin
+																																</a> #}
 							</li>
 						{% endif %}
 						{% if is_granted('ROLE_USER') %}
 							<li>
 								{# <a class="navbar-link" href="{{path('app_user_index')}}">
-																									Mon compte
-																								</a> #}
+																																	Mon compte
+																																</a> #}
+							</li>
+							<li>
+								<a class="navbar-link" href="{{path('app_logout')}}">
+																																	Déconnexion
+																																</a>
 							</li>
 						{% endif %}
 
 					</ul>
 
 				</nav>
-<div class="reassurance">
-<ul>
-<li><div ><img src="{{asset('./img/no-plane-20px.svg')}}" alt="no plane"></div><p>Pas d'avion</p></li>
-<li><div ><img src="{{asset('./img/no-truck-20px.svg')}}" alt="no truck"></div><p>Pas de camion</p></li>
-<li><div ><img src="{{asset('./img/pot-miel-20px.svg')}}" alt="honey"></div><p>100% miel naturel</p></li>
-<li><div ><img src="{{asset('./img/drapeau-france-20px.svg')}}" alt="France"></div><p>100% normand</p></li>
-</ul>
-</div>
+				<div class="reassurance">
+					<ul>
+						<li>
+							<div><img src="{{asset('./img/no-plane-20px.svg')}}" alt="no plane"></div>
+							<p>Pas d'avion</p>
+						</li>
+						<li>
+							<div><img src="{{asset('./img/no-truck-20px.svg')}}" alt="no truck"></div>
+							<p>Pas de camion</p>
+						</li>
+						<li>
+							<div><img src="{{asset('./img/pot-miel-20px.svg')}}" alt="honey"></div>
+							<p>100% miel naturel</p>
+						</li>
+						<li>
+							<div><img src="{{asset('./img/drapeau-france-20px.svg')}}" alt="France"></div>
+							<p>100% normand</p>
+						</li>
+					</ul>
+				</div>
 			</div>
 
 			{# **************
-																																																				message flash 
-																																																		*****************#}
+																																																							message flash 
+																																																					*****************#}
 
 			{# {% include "_partials/_flash.html.twig" %}
-									{% if app.user and app.user.isverified == false %}
-										<div class="alert-warning" role="alert">
-											<div class="alert-message">
-												<strong>Votre compte n'est pas encore activé</strong>. Renvoyer le
-												<a href="{{ path('app_resend_verif') }}">lien d'activation</a>
-											</div>
-										</div>
-									{% endif %} #}
+												{% if app.user and app.user.isverified == false %}
+													<div class="alert-warning" role="alert">
+														<div class="alert-message">
+															<strong>Votre compte n'est pas encore activé</strong>. Renvoyer le
+															<a href="{{ path('app_resend_verif') }}">lien d'activation</a>
+														</div>
+													</div>
+												{% endif %} #}
 		</header>
 		{# fin menu #}
 		{# fin header #}
