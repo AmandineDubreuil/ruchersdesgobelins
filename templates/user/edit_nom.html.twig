@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du compte
+{% endblock %}
+
+
+{% block body %}
+<main>
+
+	<section class="userEdit premieresection">
+
+		<a class="btnContact" href="{{ path('app_user_index') }}">
+			<i class="fa-solid fa-arrow-left"></i>
+		</a>
+
+		<h1>Modification de votre nom</h1>
+
+		{{ include('user/_form_nom.html.twig', {'button_label': 'Valider'}) }}
+
+	</section>
+
+</main>
+{% endblock %}

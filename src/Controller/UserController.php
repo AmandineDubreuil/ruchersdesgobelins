@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Form\UserNomType;
 use App\Form\UserEmailType;
 use App\Service\JWTService;
 use App\Service\SendMailService;
@@ -126,6 +127,30 @@ class UserController extends AbstractController
         return $this->render('user/edit_email.html.twig', [
             'user' => $user,
             'formEmail' => $form,
+        ]);
+    }
+
+    #[Route('/{id}/editNom', name: 'app_user_edit_nom', methods: ['GET', 'POST'])]
+    public function editNom(
+        Request $request,
+        User $user,
+        EntityManagerInterface $entityManager,
+    ): Response {
+
+         /* FORMULAIRE EDIT NOM */
+
+        $form = $this->createForm(UserNomType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+             return $this->render('user/edit_nom.html.twig', [
+            'user' => $user,
+            'formNom' => $form,
         ]);
     }
 

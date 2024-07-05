@@ -1,0 +1,14 @@
+{{ form_errors(formNom) }}
+
+{{ form_start(formNom) }}
+<div class="form-field">
+	{{ form_row(formNom.nom, {
+            label: 'Nouveau nom : ',
+                   }) }}
+</div>
+<div class="groupeBtn">
+	<button class="btnOk">
+		Valider
+	</button>
+</div>
+{{ form_end(formNom) }}
