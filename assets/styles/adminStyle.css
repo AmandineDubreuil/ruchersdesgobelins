@@ -1,3 +1,5 @@
+/* page login */
+
 #login section {
     display: flex;
     justify-content: center;
@@ -11,7 +13,9 @@
     flex-direction: column;
 
 }
-
+#login form .mb-3 a {
+    text-decoration: underline;
+}
 #login form .connexionForm label {
 
     margin-bottom: .5rem;
@@ -22,3 +26,25 @@
     min-width: 300px;
     max-width: 500px;
 }
+
+/* fin page login */
+
+/* pages Profil / User & CRUD associé */
+
+#profil .gestionUser div {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#profil .gestionUser div a {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#profil p {
+    padding-top: 0;
+}
+/* fin pages Profil / User & CRUD associé */

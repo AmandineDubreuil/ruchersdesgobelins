@@ -1,0 +1,18 @@
+{% extends 'emails/base_emails.html.twig' %}
+
+{% block body %}
+	<h1>Modification de votre adresse E-mail</h1>
+
+	<p>
+		Bonjour
+		{{ user.nom}},</p>
+
+	<p>Votre adresse e-mail a été modifiée avec succès. Pour confirmer votre nouvelle adresse e-mail, cliquez sur le lien ci-dessous :</p>
+	<p>
+		<a href="{{ absolute_url( path('app_verify_user',{token:token} )) }}">Lien</a>
+	</p>
+	<p>Ce lien expirera dans 24 heures.</p>
+	<p>Bien cordialement,</p>
+	<p>Administration Les Ruchers des Gobelins</p>
+
+{% endblock %}

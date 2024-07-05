@@ -1,39 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}Profil{% endblock %}
+
+{% block stylesheets %}
+	{# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> #}
+	{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/> {{ encore_entry_link_tags('app') }}
+
+{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+<main>
+<section id="profil">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Email</th>
-                <th>Roles</th>
-                <th>Password</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
-                <td>
-                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <h1>Mon profil </h1>
+    
+    <div class="gestionUser">
 
-    <a href="{{ path('app_user_new') }}">Create new</a>
+			<div class="nom">
+            
+				<p>Nom :</p>
+
+				<a href="{{ path('app_user_edit_email', {'id': app.user.id})}}">
+					<p>&nbsp;{{app.user.nom}}&nbsp;</p>
+					<i class="fa-solid fa-pen-to-square"></i>
+				</a>
+			</div>
+
+			<div class="email">
+
+				<p>E-mail :</p>
+
+				<a href="{{ path('app_user_edit_email', {'id': app.user.id})}}">
+					<p>&nbsp;{{app.user.email}}&nbsp;</p>
+					<i class="fa-solid fa-pen-to-square"></i>
+				</a>
+			</div>
+
+			{# <a href="{{ path('app_modif_password') }}" class=" btnEdit">Modifier le mot de passe</a> #}
+		</div>
+    </section>
+</main>
 {% endblock %}
