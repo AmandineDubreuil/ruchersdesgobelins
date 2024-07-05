@@ -4,16 +4,27 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Service\JWTService;
+use App\Form\ResetPasswordType;
 use App\Service\SendMailService;
 use App\Repository\UserRepository;
+use App\Form\ResetPasswordRequestType;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Bundle\MakerBundle\Security\Model\Authenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 class SecurityController extends AbstractController
 {
+
+    // *********************
+    // LOGIN / LOGOUT
+    // *********************
+
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
@@ -34,6 +45,10 @@ class SecurityController extends AbstractController
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
+
+    // ***********************
+    // VERIFICATION MAIL USER
+    // ************************
 
     #[Route('/verify/{token}', name: 'app_verify_user')]
     public function verifyUser(
@@ -117,4 +132,6 @@ class SecurityController extends AbstractController
         $this->addFlash('success', 'Un e-mail vient de vous être envoyé à l\'adresse que vous nous avez communiquée.');
         return $this->redirectToRoute('app_user_index');
     }
+
+
 }
