@@ -27,7 +27,7 @@ class Blog
     private ?string $article = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $modifiedAt = null;
+    private ?\DateTimeImmutable $createdAt = null;
 
     public function getId(): ?int
     {
@@ -82,14 +82,14 @@ class Blog
         return $this;
     }
 
-    public function getModifiedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
-        return $this->modifiedAt;
+        return $this->createdAt;
     }
 
-    public function setModifiedAt(\DateTimeImmutable $modifiedAt): static
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
-        $this->modifiedAt = $modifiedAt;
+        $this->createdAt = $createdAt;
 
         return $this;
     }

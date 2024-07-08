@@ -13,7 +13,7 @@
                 <th>Image</th>
                 <th>SousTitre</th>
                 <th>Article</th>
-                <th>ModifiedAt</th>
+                <th>createdAt</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -25,7 +25,7 @@
                 <td>{{ blog.image }}</td>
                 <td>{{ blog.sousTitre }}</td>
                 <td>{{ blog.article }}</td>
-                <td>{{ blog.modifiedAt ? blog.modifiedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ blog.createdAt ? blog.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_blog_show', {'id': blog.id}) }}">show</a>
                     <a href="{{ path('app_blog_edit', {'id': blog.id}) }}">edit</a>

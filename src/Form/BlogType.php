@@ -16,7 +16,7 @@ class BlogType extends AbstractType
             ->add('image')
             ->add('sousTitre')
             ->add('article')
-            ->add('modifiedAt', null, [
+            ->add('createdAt', null, [
                 'widget' => 'single_text',
             ])
         ;

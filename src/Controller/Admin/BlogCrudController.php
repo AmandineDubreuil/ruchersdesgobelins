@@ -118,8 +118,8 @@ class BlogCrudController extends AbstractCrudController
         ->hideOnIndex();
         yield TextEditorField::new('article')
             ->hideOnIndex();
-        yield DateTimeField::new('modifiedAt')
-            ->setLabel('date de modification')
+        yield DateTimeField::new('createdAt')
+            ->setLabel('date de création')
             ->setTimezone('Europe/Paris')
             ->hideOnForm();
 
@@ -135,7 +135,7 @@ class BlogCrudController extends AbstractCrudController
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         if (!$entityInstance instanceof Blog) return;
-        $entityInstance->setModifiedAt(new \DateTimeImmutable);
+        $entityInstance->setCreatedAt(new \DateTimeImmutable);
         //   dd($entityInstance);
         parent::persistEntity($entityManager, $entityInstance);
     }
