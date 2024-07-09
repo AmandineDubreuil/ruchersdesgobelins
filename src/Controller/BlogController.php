@@ -22,25 +22,25 @@ class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_blog_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
-    {
-        $blog = new Blog();
-        $form = $this->createForm(BlogType::class, $blog);
-        $form->handleRequest($request);
+    // #[Route('/new', name: 'app_blog_new', methods: ['GET', 'POST'])]
+    // public function new(Request $request, EntityManagerInterface $entityManager): Response
+    // {
+    //     $blog = new Blog();
+    //     $form = $this->createForm(BlogType::class, $blog);
+    //     $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($blog);
-            $entityManager->flush();
+    //     if ($form->isSubmitted() && $form->isValid()) {
+    //         $entityManager->persist($blog);
+    //         $entityManager->flush();
 
-            return $this->redirectToRoute('app_blog_index', [], Response::HTTP_SEE_OTHER);
-        }
+    //         return $this->redirectToRoute('app_blog_index', [], Response::HTTP_SEE_OTHER);
+    //     }
 
-        return $this->render('blog/new.html.twig', [
-            'blog' => $blog,
-            'form' => $form,
-        ]);
-    }
+    //     return $this->render('blog/new.html.twig', [
+    //         'blog' => $blog,
+    //         'form' => $form,
+    //     ]);
+    // }
 
     #[Route('/{id}', name: 'app_blog_show', methods: ['GET'])]
     public function show(Blog $blog): Response
@@ -50,32 +50,32 @@ class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_blog_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Blog $blog, EntityManagerInterface $entityManager): Response
-    {
-        $form = $this->createForm(BlogType::class, $blog);
-        $form->handleRequest($request);
+    // #[Route('/{id}/edit', name: 'app_blog_edit', methods: ['GET', 'POST'])]
+    // public function edit(Request $request, Blog $blog, EntityManagerInterface $entityManager): Response
+    // {
+    //     $form = $this->createForm(BlogType::class, $blog);
+    //     $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->flush();
+    //     if ($form->isSubmitted() && $form->isValid()) {
+    //         $entityManager->flush();
 
-            return $this->redirectToRoute('app_blog_index', [], Response::HTTP_SEE_OTHER);
-        }
+    //         return $this->redirectToRoute('app_blog_index', [], Response::HTTP_SEE_OTHER);
+    //     }
 
-        return $this->render('blog/edit.html.twig', [
-            'blog' => $blog,
-            'form' => $form,
-        ]);
-    }
+    //     return $this->render('blog/edit.html.twig', [
+    //         'blog' => $blog,
+    //         'form' => $form,
+    //     ]);
+    // }
 
-    #[Route('/{id}', name: 'app_blog_delete', methods: ['POST'])]
-    public function delete(Request $request, Blog $blog, EntityManagerInterface $entityManager): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$blog->getId(), $request->getPayload()->getString('_token'))) {
-            $entityManager->remove($blog);
-            $entityManager->flush();
-        }
+    // #[Route('/{id}', name: 'app_blog_delete', methods: ['POST'])]
+    // public function delete(Request $request, Blog $blog, EntityManagerInterface $entityManager): Response
+    // {
+    //     if ($this->isCsrfTokenValid('delete'.$blog->getId(), $request->getPayload()->getString('_token'))) {
+    //         $entityManager->remove($blog);
+    //         $entityManager->flush();
+    //     }
 
-        return $this->redirectToRoute('app_blog_index', [], Response::HTTP_SEE_OTHER);
-    }
+    //     return $this->redirectToRoute('app_blog_index', [], Response::HTTP_SEE_OTHER);
+    // }
 }

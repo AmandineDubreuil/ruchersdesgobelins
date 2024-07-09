@@ -118,13 +118,14 @@ class BlogCrudController extends AbstractCrudController
             ->hideOnIndex();
         yield TextEditorField::new('article')
             ->hideOnIndex();
-            yield ImageField::new('image')
+        yield ImageField::new('image')
             ->setBasePath('uploads/blog/')
             ->setUploadDir('public/uploads/blog/')
             ->setUploadedFileNamePattern('[year].[month].[day].[name]-[uuid].[extension]')
-            ->setFormTypeOptions(['required' => true])
-            ;
-            
+            ->setHelp('Pour la rapidité du site, privilégiez une image de taille inférieure à 500ko')
+            // ->setFormTypeOptions(['required' => true])
+        ;
+
         yield DateTimeField::new('createdAt')
             ->setLabel('Date de création')
             ->setTimezone('Europe/Paris')
