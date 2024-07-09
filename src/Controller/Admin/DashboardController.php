@@ -23,8 +23,13 @@ class DashboardController extends AbstractDashboardController
     #[IsGranted('ROLE_ADMIN')]
     public function index(): Response
     {
-        return $this->render('admin/dashboard.html.twig');
+       // return $this->render('admin/dashboard.html.twig');
   
+       $url = $this->adminUrlGenerator
+       ->setController(BlogCrudController::class)
+       ->generateUrl();
+
+       return $this->redirect($url);
         // Option 1. You can make your dashboard redirect to some common page of your backend
         //
         // $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
@@ -50,7 +55,8 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Accueil Admin', 'fa fa-home');
+        //yield MenuItem::linkToDashboard('Accueil Admin', 'fa fa-home');
+        yield MenuItem::linktoRoute('Les Ruchers des Gobelins', 'fas fa-home', 'app_home');
         yield MenuItem::section('Blog');
         yield MenuItem::subMenu('Actions', 'fas fa-bars')->setSubItems([
              MenuItem::linkToCrud('Ajout Article', 'fas fa-plus', Blog::class)->setAction(Crud::PAGE_NEW),

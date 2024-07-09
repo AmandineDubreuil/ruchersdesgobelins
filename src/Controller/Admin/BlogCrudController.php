@@ -121,12 +121,12 @@ class BlogCrudController extends AbstractCrudController
             yield ImageField::new('image')
             ->setBasePath('uploads/blog/')
             ->setUploadDir('public/uploads/blog/')
-            ->setUploadedFileNamePattern('[year].[month].[day].[name]-[contenthash].[extension]')
+            ->setUploadedFileNamePattern('[year].[month].[day].[name]-[uuid].[extension]')
             ->setFormTypeOptions(['required' => true])
             ;
             
         yield DateTimeField::new('createdAt')
-            ->setLabel('date de création')
+            ->setLabel('Date de création')
             ->setTimezone('Europe/Paris')
             ->hideOnForm();
 
