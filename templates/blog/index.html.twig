@@ -1,43 +1,60 @@
 {% extends 'base.html.twig' %}
+{% block metaTag %}
+	<meta name="Blog" content="Venez découvrir la richesse de l'apiculture ! Les Ruchers des Gobelins vous proposent différents articles en lien avec leur production de miel normand et leurs abeilles.">
+{% endblock %}
 
-{% block title %}Blog index{% endblock %}
+{% block title %}Blog d'un Apiculteur Normand | Les Ruchers des Gobelins
+{% endblock %}
+
+{% block stylesheets %}
+	{# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> #}
+	{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/> {{ encore_entry_link_tags('app') }}
+
+{% endblock %}
 
 {% block body %}
-    <h1>Blog index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Image</th>
-                <th>SousTitre</th>
-                <th>Article</th>
-                <th>createdAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+<main id="blogIndex">
+    <h1>Liste des articles</h1>
+
+<div class="cards">
         {% for blog in blogs %}
-            <tr>
-                <td>{{ blog.id }}</td>
-                <td>{{ blog.titre }}</td>
-                <td>{{ blog.image }}</td>
-                <td>{{ blog.sousTitre }}</td>
-                <td>{{ blog.article }}</td>
-                <td>{{ blog.createdAt ? blog.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_blog_show', {'id': blog.id}) }}">show</a>
-                    <a href="{{ path('app_blog_edit', {'id': blog.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+				<div class="card">
+					<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
+						<div class="imgCard"><img src="../uploads/blog/{{ blog.image }}" alt="{{ blog.image }}"></div>
+					</a>
+					<div class="texteCard">
+						<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
+							<div class="enteteTexteCard">
+								<div class="titreTexteCard">
+									<h2>{{ blog.titre }}</h2>
+								</div>
+				
+								
+							</div>
+						</a>
+						<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
+							<div class="corpsTexteCard">
+								<p>
+									{{ blog.sousTitre }}</p>
+                                    <p>Créé le : {{ blog.createdAt ? blog.createdAt|date('d-m-Y') : '' }}</p>
+							</div>
+						</a>
+						<div class="btnDf">
+							<a href="{{ path('app_blog_show', {'id': blog.id}) }}" class="btnOk">Lire</a>
+						</div>
+					</div>
+				</div>
 
-    <a href="{{ path('app_blog_new') }}">Create new</a>
+			{% else %}
+				<p>Aucun article proposé aujourd'hui</p>
+			{% endfor %}
+
+		</div>
+
+    
+    </main>
 {% endblock %}
