@@ -17,44 +17,46 @@
 
 {% block body %}
 
-<main id="blogIndex">
-    <h1>Liste des articles</h1>
+	<main id="blogIndex">
+		<section class="widthDesktop">
+			<h1>Liste des articles</h1>
 
-<div class="cards">
-        {% for blog in blogs %}
-				<div class="card">
-					<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
-						<div class="imgCard"><img src="../uploads/blog/{{ blog.image }}" alt="{{ blog.image }}"></div>
-					</a>
-					<div class="texteCard">
+			<div class="cards">
+				{% for blog in blogs %}
+					<div class="card">
 						<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
-							<div class="enteteTexteCard">
-								<div class="titreTexteCard">
-									<h2>{{ blog.titre }}</h2>
+							<div class="imgCard"><img src="../uploads/blog/{{ blog.image }}" alt="{{ blog.image }}"></div>
+						</a>
+						<div class="texteCard">
+							<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
+								<div class="enteteTexteCard">
+									<div class="titreTexteCard">
+										<h2>{{ blog.titre }}</h2>
+									</div>
+
+
 								</div>
-				
-								
+							</a>
+							<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
+								<div class="corpsTexteCard">
+									<p>
+										{{ blog.sousTitre }}</p>
+									<p>Créé le :
+										{{ blog.createdAt ? blog.createdAt|date('d-m-Y') : '' }}</p>
+								</div>
+							</a>
+							<div class="btnDf">
+								<a href="{{ path('app_blog_show', {'id': blog.id}) }}" class="btnOk">Lire</a>
 							</div>
-						</a>
-						<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
-							<div class="corpsTexteCard">
-								<p>
-									{{ blog.sousTitre }}</p>
-                                    <p>Créé le : {{ blog.createdAt ? blog.createdAt|date('d-m-Y') : '' }}</p>
-							</div>
-						</a>
-						<div class="btnDf">
-							<a href="{{ path('app_blog_show', {'id': blog.id}) }}" class="btnOk">Lire</a>
 						</div>
 					</div>
-				</div>
 
-			{% else %}
-				<p>Aucun article proposé aujourd'hui</p>
-			{% endfor %}
+				{% else %}
+					<p>Aucun article proposé aujourd'hui</p>
+				{% endfor %}
 
-		</div>
+			</div>
 
-    
-    </main>
+		</section>
+	</main>
 {% endblock %}

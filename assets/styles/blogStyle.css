@@ -1,0 +1,45 @@
+#blogArticle .entete {
+    padding-bottom: 0;
+}
+
+#blogArticle .entete .slug {
+  color: var(--color-five);
+}
+#blogArticle .entete .image {
+  
+    margin-top: 3rem;
+  }
+
+#blogArticle .texte ul, #blogArticle .texte li  {
+    list-style: disc;
+    margin-left: 1rem;
+}
+#blogArticle .texte h1 {
+    /* équivalent au h2 standard */
+    margin: 0;
+    padding: 1rem 0;
+    font-family: "MedievalSharpBold", Georgia, "Times New Roman", Times, serif;
+    font-size: 2rem;
+    color: var(--color-two);
+}
+/* ********************
+    
+    FORMAT DESKTOP
+    
+    ***************/
+
+@media screen and (min-width: 576px) {
+  #blogArticle .entete .image {
+
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+
+  #blogArticle .texte {
+  margin-left: 6rem;
+  margin-right: 6rem;
+  }
+
+  /* fin format desktop */
+}

@@ -28,6 +28,7 @@
   --color-four: #cacf9e;
 
   --color-five: #969594;
+  --color-five-light: #bdbcbb;
 
   --color-six: #000;
 }
@@ -132,6 +133,30 @@ h2 {
     315deg,
     transparent 10%,
     var(--color-three-dark) 10%
+  );
+}
+.btnBack {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  background: linear-gradient(315deg, transparent 10%, var(--color-five) 10%);
+  border: 0;
+  color: #fff;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.btnBack:hover,
+.btnBack:focus {
+  background: linear-gradient(
+    315deg,
+    transparent 10%,
+    var(--color-five-light) 10%
   );
 }
 
