@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\BlogRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\BlogRepository;
 
 #[ORM\Entity(repositoryClass: BlogRepository::class)]
+
 class Blog
 {
     #[ORM\Id]
@@ -17,7 +18,7 @@ class Blog
     #[ORM\Column(length: 255)]
     private ?string $titre = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(nullable: true)]
     private ?string $image = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
@@ -26,7 +27,7 @@ class Blog
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $article = null;
 
-    #[ORM\Column]
+    #[ORM\Column (nullable: true)]
     private ?\DateTimeImmutable $createdAt = null;
 
     public function getId(): ?int
@@ -45,6 +46,8 @@ class Blog
 
         return $this;
     }
+
+
 
     public function getImage(): ?string
     {

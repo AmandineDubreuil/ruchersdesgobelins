@@ -115,9 +115,16 @@ class BlogCrudController extends AbstractCrudController
             ->setFormTypeOption('disabled', 'disabled');
         yield TextField::new('titre');
         yield TextField::new('sousTitre')
-        ->hideOnIndex();
+            ->hideOnIndex();
         yield TextEditorField::new('article')
             ->hideOnIndex();
+            yield ImageField::new('image')
+            ->setBasePath('uploads/blog/')
+            ->setUploadDir('public/uploads/blog/')
+            ->setUploadedFileNamePattern('[year].[month].[day].[name]-[contenthash].[extension]')
+            ->setFormTypeOptions(['required' => true])
+            ;
+            
         yield DateTimeField::new('createdAt')
             ->setLabel('date de création')
             ->setTimezone('Europe/Paris')
