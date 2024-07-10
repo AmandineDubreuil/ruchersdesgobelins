@@ -8,6 +8,8 @@
 #blogArticle .entete .image {
   
     margin-top: 3rem;
+    max-height: 60vh;
+    overflow: hidden;
   }
 
 #blogArticle .texte ul, #blogArticle .texte li  {
@@ -37,8 +39,8 @@
   }
 
   #blogArticle .texte {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
   }
 
   /* fin format desktop */

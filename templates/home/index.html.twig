@@ -198,9 +198,37 @@
 		{# fin section process #}
 
 		{# section articles #}
-		<section class="articles backgroundImage">
+				<section class="articles backgroundImage">
 			<div class="widthDesktop">
 				<h2>Derniers articles</h2>
+				<div class="cards small">
+					{% for blog in blogs | slice(0) %}
+						<div class="card">
+							<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
+								<div class="imgCard">
+									<img src="../uploads/blog/{{ blog.image }}" alt="{{blog.titre}}">
+								</div>
+							</a>
+							<div class="texteCard">
+								<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
+									<div class="enteteTexteCard">
+										<div class="titreTexteCard">
+											<h3>{{ blog.titre }}</h3>
+										</div>
+									</div>
+								</a>
+								<div class="btnDf">
+									<a href="{{ path('app_blog_show', {'id': blog.id}) }}" class="btnOk">Lire</a>
+								</div>
+							</div>
+						</div>
+
+					{% else %}
+						<p>Aucun article proposé aujourd'hui</p>
+					{% endfor %}
+
+				</div>
+
 			</div>
 		</section>
 		{# fin section articles #}

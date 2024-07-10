@@ -43,10 +43,17 @@ class BlogController extends AbstractController
     // }
 
     #[Route('/{id}', name: 'app_blog_show', methods: ['GET'])]
-    public function show(Blog $blog): Response
-    {
+    public function show(
+        Blog $blog,
+        BlogRepository $blogRepository,
+    ): Response {
+
+        // blog derniers articles
+        $blogs = $blogRepository->findlastXArticles(4);
+
         return $this->render('blog/show.html.twig', [
             'blog' => $blog,
+            'blogs' => $blogs
         ]);
     }
 

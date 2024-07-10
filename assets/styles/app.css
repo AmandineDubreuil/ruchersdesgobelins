@@ -108,6 +108,12 @@ h2 {
   font-size: 2rem;
   color: var(--color-two);
 }
+h3, .h3 {
+  padding: 1rem 0;
+  font-family: "MedievalSharpBold", Georgia, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  color: var(--color-two);
+}
 
 /* BOUTONS CTA */
 

@@ -32,37 +32,39 @@
 			</p>
 
 			<a class="btnBack" href="{{ path('app_blog_index') }}">Retour</a>
+		</section>
+		<section class="articles backgroundImage">
+			<div class="widthDesktop">
+				<h2>Derniers articles</h2>
+				<div class="cards small">
+					{% for blog in blogs | slice(0) %}
+						<div class="card">
+							<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
+								<div class="imgCard">
+									<img src="../uploads/blog/{{ blog.image }}" alt="{{blog.titre}}">
+								</div>
+							</a>
+							<div class="texteCard">
+								<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
+									<div class="enteteTexteCard">
+										<div class="titreTexteCard">
+											<h3>{{ blog.titre }}</h3>
+										</div>
+									</div>
+								</a>
+								<div class="btnDf">
+									<a href="{{ path('app_blog_show', {'id': blog.id}) }}" class="btnOk">Lire</a>
+								</div>
+							</div>
+						</div>
 
-			{# <table class="table">
-												        <tbody>
-												            <tr>
-												                <th>Id</th>
-												                <td>{{ blog.id }}</td>
-												            </tr>
-												            <tr>
-												                <th>Titre</th>
-												                <td>{{ blog.titre }}</td>
-												            </tr>
-												            <tr>
-												                <th>Image</th>
-												                <td>{{ blog.image }}</td>
-												            </tr>
-												            <tr>
-												                <th>SousTitre</th>
-												                <td>{{ blog.sousTitre }}</td>
-												            </tr>
-												            <tr>
-												                <th>Article</th>
-												                <td>{{ blog.article }}</td>
-												            </tr>
-												            <tr>
-												                <th>createdAt</th>
-												                <td>{{ blog.createdAt ? blog.createdAt|date('d-m-Y') : '' }}</td>
-												            </tr>
-												        </tbody>
-												    </table> #}
+					{% else %}
+						<p>Aucun article proposé aujourd'hui</p>
+					{% endfor %}
 
+				</div>
 
+			</div>
 		</section>
 	</main>
 

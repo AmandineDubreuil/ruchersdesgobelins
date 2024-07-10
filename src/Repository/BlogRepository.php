@@ -16,6 +16,19 @@ class BlogRepository extends ServiceEntityRepository
         parent::__construct($registry, Blog::class);
     }
 
+       /**
+    * @return Blog[] Retourne un tableau des X derniers articles ajoutés par le biais de leur id
+    */
+   public function findlastXArticles($value): array
+   {
+       return $this->createQueryBuilder('b')
+           ->orderBy('b.id', 'DESC')
+           ->setMaxResults($value)
+           ->getQuery()
+           ->getResult()
+       ;
+   }
+
 //    /**
 //     * @return Blog[] Returns an array of Blog objects
 //     */
