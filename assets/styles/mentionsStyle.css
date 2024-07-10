@@ -1,18 +1,14 @@
-#confidentialite h1{
+#mentions h1{
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     font-size: 1.8rem;
     }
 
-#confidentialite h2{
+#mentions h2{
 font-family: 'Inter', Arial, Helvetica, sans-serif;
 font-size: 1.3rem;
 }
-#confidentialite h3{
+#mentions h3{
     font-family: 'Inter', Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     }
-#confidentialite ol li {
 
-    list-style: decimal;
-    margin-left: 2rem;
-}
