@@ -11,6 +11,7 @@ import './styles/adminStyle.css';
 import './styles/blogStyle.css';
 import './styles/cardsStyle.css';
 import './styles/confidentialiteStyle.css';
+import './styles/contactStyle.css';
 import './styles/homeStyle.css';
 import './styles/mentionsStyle.css';
 import './styles/produitsStyle.css';

@@ -6,6 +6,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class ContactDTO
 {
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 3, max: 200)]
+    public string $firstName = '';
 
     #[Assert\NotBlank]
     #[Assert\Length(min: 3, max: 200)]

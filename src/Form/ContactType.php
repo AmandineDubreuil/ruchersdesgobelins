@@ -19,6 +19,9 @@ class ContactType extends AbstractType
             ->add('name', TextType::class, [
                 'empty_data'=> ''
             ])
+            ->add('firstName', TextType::class, [
+                'empty_data'=> ''
+            ])
             ->add('email', EmailType::class, [
                 'empty_data'=> ''
             ])
