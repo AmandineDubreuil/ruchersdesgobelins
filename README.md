@@ -29,3 +29,12 @@ Tokens générés via JWT pour la vérification de l'adresse e-mail et la modifi
 ### Modification mdp et mdp oublié user
 
 - Services JWTService.php et SendMailService.php
+
+
+## Contact Form
+
+- création d'un DTO contact dans src/DTO/ContactDTO.php
+- création d'un form dans src/Form/ContactType.php
+- création d'un controller dans src/Controller/ContactController.php
+- création d'un template dans template/contact/contact.html.twig
+- création d'un template mail dans template/emails/contact_email.html.twig
