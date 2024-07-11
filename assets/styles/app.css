@@ -330,10 +330,13 @@ footer {
   background-color: var(--color-six);
 }
 footer p,
-footer a,
-footer i {
+footer a {
   color: var(--color-one);
   font-size: .8rem;
+}
+footer i {
+  color: var(--color-one);
+  font-size: 1.2rem;
 }
 
 footer .group, footer .group .first {
