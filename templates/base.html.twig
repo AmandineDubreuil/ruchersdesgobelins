@@ -99,8 +99,8 @@
 																																																													message flash 
 																																																											*****************#}
 
-			{# {% include "_partials/_flash.html.twig" %}
-																		{% if app.user and app.user.isverified == false %}
+			{% include "_partials/_flash.html.twig" %}
+																	{# 	{% if app.user and app.user.isverified == false %}
 																			<div class="alert-warning" role="alert">
 																				<div class="alert-message">
 																					<strong>Votre compte n'est pas encore activé</strong>. Renvoyer le

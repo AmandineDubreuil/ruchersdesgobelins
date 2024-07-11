@@ -3,20 +3,31 @@
 {% block body %}
 
 
-	<p>Vous avez reçu une nouvelle demande :</p>
-	<p>
-		<span class="bold">Message de :</span>
+	<p style="
+	  font-family: 'Inter', Arial, Helvetica, sans-serif;
+	">Une nouvelle demande vous a été envoyée :</p>
+	<p style="
+	  font-family: 'Inter', Arial, Helvetica, sans-serif;
+	">
+		<span style="font-weight: bold;">Message de :</span>
 		{{data.firstName}} {{data.name}}
 
 	</p>
-	<p>
-		<span>Coordonnées :</span>
+	<p  style="
+	  font-family: 'Inter', Arial, Helvetica, sans-serif;
+	">
+		<span style="font-weight: bold;">Coordonnées :</span>
 
 		{{data.email}}</p>
 
-	<p>Message :</p>
+	<p style="
+	  font-family: 'Inter', Arial, Helvetica, sans-serif;
+	  font-weight: bold;
+	">Message :</p>
 
-	<p class="">{{data.message | nl2br}}</p>
+	<p  style="
+	  font-family: 'Inter', Arial, Helvetica, sans-serif;
+	">{{data.message | nl2br}}</p>
 
 
 {% endblock %}
