@@ -5,9 +5,7 @@ PHP : 8.2
 Symfony : 7.1.1
 
 ### Bundles
-- stimulus-bundle
 - easyadmin 4
-- vich_uploader 2.4
 
 
 ## Tokens
