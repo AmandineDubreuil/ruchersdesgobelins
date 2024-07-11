@@ -30,13 +30,13 @@ class ContactController extends AbstractController
             $mail = (new TemplatedEmail())
                 ->to('amandine.dubreuil@hotmail.com')
                 ->from($data->email)
-                ->subject('Demande de contact via le site')
+                ->subject('Demande de contact via lesruchersdesgobelins.fr')
                 ->htmlTemplate('emails/contact_email.html.twig')
                 ->context(['data' => $data]);
 
             $mailer->send($mail);
-            $this->addFlash('success', 'Votre e-mail a bien été envoyé');
-            $this->redirectToRoute('app_contact');
+             $this->addFlash('success', 'Votre e-mail a bien été envoyé');
+          return  $this->redirectToRoute('app_contact');
         }
 
 
