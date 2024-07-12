@@ -3,11 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\ResetPasswordFormType;
+use App\Form\ResetPasswordRequestFormType;
 use App\Service\JWTService;
-use App\Form\ResetPasswordType;
 use App\Service\SendMailService;
 use App\Repository\UserRepository;
-use App\Form\ResetPasswordRequestType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,6 +16,7 @@ use Symfony\Bundle\MakerBundle\Security\Model\Authenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 class SecurityController extends AbstractController
@@ -123,15 +124,122 @@ class SecurityController extends AbstractController
 
         //envoi d'un mail
         $sendMailService->send(
-            'no-reply@lechalprev.fr',
+            'no-reply@lesruchersdesgobelins.fr',
             $user->getEmail(),
-            'Activation de votre compte Lechal\'Prév.fr',
+            'Activation de votre compte Les Ruchers des Gobelins',
             'register',
-            compact('user', 'token')
+            compact('user', 'token'),
         );
         $this->addFlash('success', 'Un e-mail vient de vous être envoyé à l\'adresse que vous nous avez communiquée.');
         return $this->redirectToRoute('app_user_index');
     }
 
+    #[Route('/mot-de-passe-oublie', name: 'app_forgotten_password')]
+    public function forgottenPassword(
+        Request $request,
+        UserRepository $userRepository,
+        JWTService $jWTService,
+        SendMailService $mail,
+    ): Response {
+        $form = $this->createForm(ResetPasswordRequestFormType::class);
 
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            //formulaire est envoyé et valide
+            // on va chercher le user dans la base
+
+            $user = $userRepository->findOneByEmail($form->get('email')->getData());
+
+            // vérifie s'il y a un user
+            if ($user) {
+                // ok user
+                // Génération du JWT de l'utilisateur
+                // créer le header
+                $header = [
+                    'typ' => 'JWT',
+                    'alg' => 'HS256'
+                ];
+
+                //créer le payload
+                $payload = [
+                    'user_id' => $user->getId()
+                ];
+                //définir la durée de validité en nb de secondes
+                $validity = 1200;
+
+                // générer le token
+                $token = $jWTService->generate($header, $payload, $this->getParameter('app.jwtsecret'), $validity);
+
+                // on génère l'url vers app_reset_password
+                $url = $this->generateUrl('app_reset_password', ['token' => $token], UrlGeneratorInterface::ABSOLUTE_URL);
+
+                //envoyer l'e-mail
+                $mail->send(
+                    'no_reply@lesruchersdesgobelins.fr',
+                    $user->getEmail(),
+                    'Rénitialisation de votre mot de passe sur le site Les Ruchers des Gobelins',
+                    'password_reset',
+                    compact('user', 'url') // ['user' => $user, 'url' => $url ]
+                );
+
+                $this->addFlash('success', 'E-mail envoyé avec succès !');
+                return $this->redirectToRoute('app_login');
+            }
+
+            //$user est nul 
+            $this->addFlash('danger', 'Un problème est survenu');
+            return $this->redirectToRoute('app_login');
+        }
+
+
+        return $this->render('security/reset_password_request.html.twig', [
+            'requestPassForm' => $form->createView()
+        ]);
+    }
+
+    #[Route('/mot-de-passe-oublie/{token}', name: 'app_reset_password')]
+    public function resetPassword(
+        $token,
+        JWTService $jWTService,
+        UserRepository $userRepository,
+        UserPasswordHasherInterface $passwordHasher,
+        EntityManagerInterface $em,
+        Request $request,
+    ): Response {
+
+        //on vérifie si le token est valide (cohérent, pas expiré et signature correcte)
+        if ($jWTService->isValidToken($token) && !$jWTService->isExpiredToken($token) && $jWTService->checkSignatureToken($token, $this->getParameter('app.jwtsecret'))) {
+            // le token est valide
+            // on récupère les données (payload)
+            $payload = $jWTService->getPayload($token);
+
+            // on récupère le user
+            $user = $userRepository->find($payload['user_id']);
+
+            if ($user) {
+
+                $form = $this->createForm(ResetPasswordFormType::class);
+                $form->handleRequest($request);
+
+                if ($form->isSubmitted() && $form->isValid()) {
+                    $user->setPassword(
+                        $passwordHasher->hashPassword($user, $form->get('plainPassword')->getData())
+                    );
+                $em->flush();
+
+                $this->addFlash('success', 'Mot de passe changé avec succès !');
+                return $this->redirectToRoute('app_login');
+
+                }
+
+                return $this->render('security/reset_password.html.twig', [
+                    'passForm' => $form->createView()
+                ]);
+            }
+        }
+
+        // le token n'est pas valide 
+        $this->addFlash('danger', 'Le token est invalide ou a expiré');
+        return $this->redirectToRoute('app_login');
+    }
 }
