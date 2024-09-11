@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\MakerBundle\Security\Model\Authenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -137,10 +138,12 @@ class SecurityController extends AbstractController
     #[Route('/mot-de-passe-oublie', name: 'app_forgotten_password')]
     public function forgottenPassword(
         Request $request,
+        Security $security,
         UserRepository $userRepository,
         JWTService $jWTService,
         SendMailService $mail,
     ): Response {
+
         $form = $this->createForm(ResetPasswordRequestFormType::class);
 
         $form->handleRequest($request);
@@ -225,11 +228,10 @@ class SecurityController extends AbstractController
                     $user->setPassword(
                         $passwordHasher->hashPassword($user, $form->get('plainPassword')->getData())
                     );
-                $em->flush();
+                    $em->flush();
 
-                $this->addFlash('success', 'Mot de passe changé avec succès !');
-                return $this->redirectToRoute('app_login');
-
+                    $this->addFlash('success', 'Mot de passe changé avec succès !');
+                    return $this->redirectToRoute('app_login');
                 }
 
                 return $this->render('security/reset_password.html.twig', [

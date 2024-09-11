@@ -7,12 +7,12 @@
   src: url(../font/medieval/MedievalSharp-Bold.ttf);
 }
 @font-face {
-  font-family: "Inter";
-  src: url(../font/inter/Inter-Regular.ttf);
+  font-family: "Caslon";
+  src: url(../font/LibreCaslonText/LibreCaslonText-Regular.ttf);
 }
 @font-face {
-  font-family: "InterBold";
-  src: url(../font/inter/Inter-Bold.ttf);
+  font-family: "CaslonBold";
+  src: url(../font/LibreCaslonText/LibreCaslonText-Bold.ttf);
 }
 
 :root {
@@ -39,7 +39,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: "Caslon", 'Times New Roman', Times, serif;
   color: var(--color-six);
   font-size: 1rem;
   text-decoration: none;
