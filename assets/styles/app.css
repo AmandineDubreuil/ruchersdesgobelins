@@ -51,7 +51,9 @@
 section {
   padding: 3rem 2rem 4rem 2rem;
 }
-
+.lastSection {
+  padding-bottom: 14rem;
+}
 p {
   padding-top: 1rem;
   line-height: 1.4;
@@ -99,20 +101,20 @@ h1 {
   padding: 1rem 0;
   font-family: "MedievalSharpBold", Georgia, "Times New Roman", Times, serif;
   font-size: 3rem;
-  color: var(--color-two);
+  color: var(--color-six);
 }
 h2 {
   padding: 1rem 0;
   font-family: "MedievalSharpBold", Georgia, "Times New Roman", Times, serif;
   font-size: 2rem;
-  color: var(--color-two);
+  color: var(--color-six);
 }
 h3,
 .h3 {
   padding: 1rem 0;
   font-family: "MedievalSharpBold", Georgia, "Times New Roman", Times, serif;
   font-size: 1.5rem;
-  color: var(--color-two);
+  color: var(--color-six);
 }
 
 /* BOUTONS CTA */
@@ -258,7 +260,6 @@ h3,
   flex-direction: column;
   width: 75vw;
   padding-bottom: 100vh;
-  /* padding-top: 1rem; */
 }
 .menu .navbar .navbar-logo {
   display: flex;
@@ -270,8 +271,8 @@ h3,
   background-size: auto;
   background-repeat: no-repeat;
   margin-top: 1rem;
-  padding-top: .2rem;
-  padding-bottom: .2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 .menu #logo {
   min-height: 2rem;
@@ -318,24 +319,56 @@ h3,
 
 /* fin Menu */
 
+
+
 /**********************
       FOOTER
 **********************/
 
 footer {
-  padding: 1rem;
-  background-color: var(--color-six);
+margin-top: -10rem;  
 }
 footer p,
 footer a {
-  color: var(--color-one);
+  color: var(--color-three-dark);
   font-size: 0.8rem;
 }
 footer i {
-  color: var(--color-one);
+  color: var(--color-three-dark);
   font-size: 1.2rem;
 }
 
+footer .head-footer {
+  width: 100%;
+  display: inline-block;
+  background: linear-gradient(225deg, transparent 10%, var(--color-three) 10%);
+
+
+}
+footer .head-footer div {
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .head-footer p {
+  color: var(--color-six);
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3rem;
+  padding-bottom: 2rem;
+}
+footer .head-footer .btnContact {
+  width: fit-content;
+  color: var(--color-three);
+  background: linear-gradient(315deg, transparent 10%, var(--color-six) 10%);
+
+}
+footer .group {
+  padding: 1rem;
+
+}
 footer .group,
 footer .group .first {
   margin-top: 1.5rem;
@@ -422,6 +455,10 @@ footer .fin a {
   }
   /* fin texte / image */
 
+  .btnContact {
+    margin: 0.5rem 2rem 0.5rem 0;
+  }
+
   /**********************
       HEADER
 **********************/
@@ -434,14 +471,7 @@ footer .fin a {
   .menu .navbar {
     width: 100vw;
     height: auto;
-    /* padding-right: 10rem; */
-    /* flex-direction: row; */
     align-items: center;
-  }
-
-  .menu .navbar-head .btnContact {
-    position: absolute;
-    right: 1rem;
   }
 
   /*navbar-head*/
@@ -463,18 +493,15 @@ footer .fin a {
 
   .menu .navbar .navbar-menu {
     width: 100%;
-    padding-bottom: .5rem;
-    padding-top: .5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
     flex-direction: row;
     align-items: center;
-    font-size: .9rem;
-
+    font-size: 0.9rem;
   }
 
   .menu .navbar .navbar-logo {
     width: 100%;
-    /* padding-bottom: 0;
-    padding-top: 0; */
     flex-direction: row;
     justify-content: space-between;
   }
@@ -500,6 +527,12 @@ footer .fin a {
   /**********************
       FOOTER
 **********************/
+
+footer .head-footer {
+  background: linear-gradient(225deg, transparent 5%, var(--color-three) 5%);
+
+
+}
 
   footer .group,
   footer .group .second {

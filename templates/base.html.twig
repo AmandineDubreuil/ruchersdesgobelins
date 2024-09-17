@@ -12,12 +12,12 @@
 		{% block stylesheets %}{% endblock %}
 
 		{# {% block javascripts %}
-																							{% block importmap %}
-																								{{ importmap('app') }}
-																							{% endblock %}
-																							<script src="{{asset('./js/menu.js')}}"></script>
-																				
-																						{% endblock %} #}
+																									{% block importmap %}
+																										{{ importmap('app') }}
+																									{% endblock %}
+																									<script src="{{asset('./js/menu.js')}}"></script>
+																						
+																								{% endblock %} #}
 	</head>
 	<body>
 
@@ -79,18 +79,18 @@
 			</div>
 
 			{# **************
-																																																																															message flash 
-																																																																													*****************#}
+																																																																																		message flash 
+																																																																																*****************#}
 
 			{% include "_partials/_flash.html.twig" %}
 			{# 	{% if app.user and app.user.isverified == false %}
-																																					<div class="alert-warning" role="alert">
-																																						<div class="alert-message">
-																																							<strong>Votre compte n'est pas encore activé</strong>. Renvoyer le
-																																							<a href="{{ path('app_resend_verif') }}">lien d'activation</a>
-																																						</div>
-																																					</div>
-																																				{% endif %} #}
+																																								<div class="alert-warning" role="alert">
+																																									<div class="alert-message">
+																																										<strong>Votre compte n'est pas encore activé</strong>. Renvoyer le
+																																										<a href="{{ path('app_resend_verif') }}">lien d'activation</a>
+																																									</div>
+																																								</div>
+																																							{% endif %} #}
 		</header>
 		{# fin menu #}
 		{# fin header #}
@@ -98,7 +98,12 @@
 		{% block body %}{% endblock %}
 
 		<footer>
-
+			<div class="head-footer">
+				<div>
+					<p>N’hésitez pas à nous contacter et à nous rejoindre sur nos réseaux sociaux</p>
+					<a href="{{path('app_contact')}}" class="btnContact">Contact</a>
+				</div>
+			</div>
 			<div class="group widthDesktop">
 				<div class="first">
 					<p class="name">Les Ruchers des Gobelins</p>
