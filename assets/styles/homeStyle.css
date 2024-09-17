@@ -1,37 +1,33 @@
 /* entête */
-#home .titre {
-  position: relative;
-  background-image: url("../img/abeilles-alveoles-500px-m.webp");
-  background-size: cover;
+#home .entete {
+  background-image: url("../../assets/img/abeilles-accueil-576px.jpeg");
+  background-position: center;
   background-repeat: no-repeat;
-  min-height: 90vh;
+  background-size: cover;
+  height: 83vh;
+  width: 100vw;
+  padding: 0;
+  color: var(--color-six);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#home .entete .accroche {
+  width: 100%;
+  padding: 2rem;
+  background-color: #ffffff99;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#home .accroche h1 {
+  margin-top: 0;
+  text-align: center;
+}
+#home .accroche p {
+  text-align: center;
 }
 
-#home .titre h1 {
-  margin-top: 6rem;
-}
-#home .accroche {
-  padding: 1rem 0;
-  font-size: 1.5rem;
-  font-family: "CaslonBold", 'Times New Roman', Times, serif;
-}
-#home .imagesTitre {
-  position: absolute;
-  bottom: 2rem;
-  width: calc(100% - 4rem);
-}
-#home .arrow-m {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50px;
-}
-#home .arrow-d {
-  display: none;
-}
-#home .imageTitre {
-  display: none;
-}
 /* fin entête */
 
 /* présentation */
@@ -52,7 +48,6 @@
 #home .histoire .valeurs p {
   margin-bottom: 0;
 }
-
 
 #home .valeurs .texteValeurs {
   display: flex;
@@ -77,36 +72,19 @@
 
 @media screen and (min-width: 576px) {
   /* entête */
-  #home .titre {
-    background-image: none;
+
+  #home .entete {
+    background-image: url("../../assets/img/abeilles-accueil-3768px.webp");
   }
-  #home .titre h1 {
-    margin-top: 3rem;
+
+  #home .entete .accroche {
+    max-width: 45%;
+    height: 83vh;
+    padding: 2rem 2rem 2rem 4rem;
   }
-  #home .titre .accroche {
-    margin-bottom: 2rem;
-  }
-  #home .arrow-d {
-    display: block;
-    width: 300px;
-  }
-  #home .arrow-m {
-    display: none;
-  }
-  #home .imagesTitre {
-    position: relative;
-    width: auto;
-    bottom: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #home .imagesTitre .dfCenter {
-    width: 50%;
-  }
-  #home .imageTitre {
-    display: block;
-    width: 500px;
+  #home .entete .accroche h1,
+  #home .entete .accroche p {
+    text-align: left;
   }
 
   /* fin entête */
