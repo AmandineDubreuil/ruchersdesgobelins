@@ -38,21 +38,22 @@
 .cards .card .texteCard {
   padding: 1rem;
 }
-.cards .card .texteCard .enteteTexteCard {
-  padding-bottom: 1rem;
-}
 
-.cards .card .texteCard .enteteTexteCard h2,
-.cards .card .texteCard .enteteTexteCard h3 {
-  padding-bottom: 1rem;
+
+
+.cards .card .texteCard .enteteTexteCard .titreTexteCard h2, .cards .card .texteCard .enteteTexteCard .titreTexteCard h3
+ {
+font-size: 1rem;
+padding: 0;
 }
 .cards .card .texteCard .enteteTexteCard p,
 .cards .card .texteCard .corpsTexteCard p {
   padding: 0;
+  font-size: .9rem;
 }
 .cards .card .texteCard .corpsTexteCard {
   padding-top: 1rem;
-  padding-bottom: 1rem;
+
   color: var(--color-five);
 }
 .cards .card .texteCard .corpsTexteCard p {

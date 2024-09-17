@@ -28,7 +28,14 @@ class BlogRepository extends ServiceEntityRepository
            ->getResult()
        ;
    }
-
+   public function orderLastArticles(): array
+   {
+       return $this->createQueryBuilder('b')
+           ->orderBy('b.id', 'DESC')
+           ->getQuery()
+           ->getResult()
+       ;
+   }
 //    /**
 //     * @return Blog[] Returns an array of Blog objects
 //     */

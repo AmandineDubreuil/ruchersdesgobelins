@@ -19,7 +19,7 @@
 
 	<main id="blogIndex">
 		<section class="widthDesktop lastSection">
-			<h1>Liste des articles</h1>
+			<h1>Les articles du blog</h1>
 
 			<div class="cards">
 				{% for blog in blogs %}
@@ -31,7 +31,7 @@
 							<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
 								<div class="enteteTexteCard">
 									<div class="titreTexteCard">
-										<h2 class="h3">{{ blog.titre }}</h2>
+										<h2 >{{ blog.titre }}</h2>
 									</div>
 
 
@@ -40,7 +40,7 @@
 							<a href="{{ path('app_blog_show', {'id': blog.id}) }}">
 								<div class="corpsTexteCard">
 									<p>
-										{{ blog.sousTitre }}</p>
+										{{ blog.sousTitre | length > 75 ? blog.sousTitre | slice(0,75) ~'...' : blog.sousTitre }}</p>
 									<p>Créé le :
 										{{ blog.createdAt ? blog.createdAt|date('d-m-Y') : '' }}</p>
 								</div>
