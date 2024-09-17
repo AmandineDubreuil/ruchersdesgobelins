@@ -92,6 +92,7 @@ img {
 .dnone {
   display: none;
 }
+
 /* fin Display */
 
 /* TITRES */
@@ -260,6 +261,7 @@ h3,
   flex-direction: column;
   width: 75vw;
   padding-bottom: 100vh;
+  
 }
 .menu .navbar .navbar-logo {
   display: flex;
@@ -306,11 +308,13 @@ h3,
 }
 .showNav {
   position: absolute;
+  z-index: 3;
   left: 0;
-  top: 8.3rem;
+  top: 3.3rem;
   opacity: 1;
   background-color: #ffffff;
 }
+
 
 /* message flash */
 .alert {
