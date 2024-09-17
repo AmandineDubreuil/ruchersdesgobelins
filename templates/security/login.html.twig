@@ -5,7 +5,7 @@
 
 {% block body %}
 	<main id="login">
-		<section>
+		<section class="lastSection">
 			<form method="post">
 				{% if error %}
 					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>

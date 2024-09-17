@@ -31,6 +31,10 @@
 
 /* pages Profil / User & CRUD associé */
 
+#profil {
+    height: 83vh;
+}
+
 #profil .gestionUser div {
     margin: 1rem 0;
     display: flex;

@@ -146,19 +146,27 @@ h3,
 }
 .btnBack {
   display: inline-block;
-  width: auto;
-  height: auto;
+  min-width: 3rem;
+
   margin: 0.5rem 0;
   padding: 0.5rem 0.7rem;
   font-size: 1rem;
-  background: linear-gradient(315deg, transparent 10%, var(--color-five) 10%);
+  text-align: center;
+  background: linear-gradient(
+    315deg,
+    transparent 10%,
+    var(--color-five-light) 10%
+  );
   border: 0;
-  color: #fff;
+  color: var(--color-six);
   outline: transparent;
   position: relative;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+}
+.btnBack i {
+  color: var(--color-six);
 }
 .btnBack:hover,
 .btnBack:focus {
@@ -261,7 +269,6 @@ h3,
   flex-direction: column;
   width: 75vw;
   padding-bottom: 100vh;
-  
 }
 .menu .navbar .navbar-logo {
   display: flex;
@@ -315,7 +322,6 @@ h3,
   background-color: #ffffff;
 }
 
-
 /* message flash */
 .alert {
   margin-top: 5.5rem;
@@ -323,14 +329,12 @@ h3,
 
 /* fin Menu */
 
-
-
 /**********************
       FOOTER
 **********************/
 
 footer {
-margin-top: -10rem;  
+  margin-top: -10rem;
 }
 footer p,
 footer a {
@@ -346,8 +350,6 @@ footer .head-footer {
   width: 100%;
   display: inline-block;
   background: linear-gradient(225deg, transparent 10%, var(--color-three) 10%);
-
-
 }
 footer .head-footer div {
   padding: 2rem 2rem;
@@ -367,11 +369,9 @@ footer .head-footer .btnContact {
   width: fit-content;
   color: var(--color-three);
   background: linear-gradient(315deg, transparent 10%, var(--color-six) 10%);
-
 }
 footer .group {
   padding: 1rem;
-
 }
 footer .group,
 footer .group .first {
@@ -532,11 +532,9 @@ footer .fin a {
       FOOTER
 **********************/
 
-footer .head-footer {
-  background: linear-gradient(225deg, transparent 5%, var(--color-three) 5%);
-
-
-}
+  footer .head-footer {
+    background: linear-gradient(225deg, transparent 5%, var(--color-three) 5%);
+  }
 
   footer .group,
   footer .group .second {
