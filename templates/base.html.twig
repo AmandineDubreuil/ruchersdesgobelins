@@ -12,12 +12,12 @@
 		{% block stylesheets %}{% endblock %}
 
 		{# {% block javascripts %}
-																									{% block importmap %}
-																										{{ importmap('app') }}
-																									{% endblock %}
-																									<script src="{{asset('./js/menu.js')}}"></script>
-																						
-																								{% endblock %} #}
+																																											{% block importmap %}
+																																												{{ importmap('app') }}
+																																											{% endblock %}
+																																											<script src="{{asset('./js/menu.js')}}"></script>
+																																								
+																																										{% endblock %} #}
 	</head>
 	<body>
 
@@ -36,7 +36,7 @@
 					</div>
 					<ul class="navbar-menu hideNav">
 						<li class="logoMobile dnone">
-						<a href="{{path('app_home')}}" class="navbar-brand" id="logo"><img src="{{asset('./img/logo-80px.svg')}}" alt="Logo Les Ruchers des Gobelins"></a>
+							<a href="{{path('app_home')}}" class="navbar-brand" id="logo"><img src="{{asset('./img/logo-80px.svg')}}" alt="Logo Les Ruchers des Gobelins"></a>
 						</li>
 						<li>
 							<a class="navbar-link" href="{{path('app_home')}}">Accueil</a>
@@ -47,120 +47,119 @@
 						<li>
 							<a class="navbar-link" href="{{path('app_blog_index')}}">Blog</a>
 						</li>
-
-
 						{% if is_granted('ROLE_ADMIN') %}
+
 							<li>
 								<a class="navbar-link" href="{{path('admin')}}">
-									Admin
+									<i class="fa-solid fa-screwdriver-wrench"></i>
 								</a>
 							</li>
 						{% endif %}
 						{% if is_granted('ROLE_USER') %}
+
+
 							<li>
-								<a class="navbar-link" href="{{path('app_user_index')}}">
-									Mon compte
-								</a>
+								<ul id="userMenuBloc" >
+									<li id="userMenu">
+										<i class="fa-solid fa-user"></i>
+
+									</li>
+									<li>
+										<ul class="navbar-menu-items-li">
+											<li><a class="navbar-link"href="{{path('app_user_index')}}">Mon compte</a></li>
+											<li><a class="navbar-link"href="{{path('app_logout')}}">Déconnexion</a></li>
+										</ul>
+
+									</li>
+
+
+								</ul>
+
+
 							</li>
-							<li>
-								<a class="navbar-link" href="{{path('app_logout')}}">
-									Déconnexion
-								</a>
-							</li>
+
 						{% endif %}
-
-					</ul>
-					<div class="navbar-logo">
-						<a href="{{path('app_home')}}" class="navbar-brand" id="logo"><img src="{{asset('./img/logo-80px.svg')}}" alt="Logo Les Ruchers des Gobelins"></a>
-						<a href="{{path('app_home')}}" class="navbar-brand" id="marque">Les Ruchers des Gobelins</a>
-						<a href="{{path('app_contact')}}" class="btnContact">Contact</a>
-
-
-					</div>
-				</nav>
-
-			</div>
-
-			{# **************
-																																																																																		message flash 
-																																																																																*****************#}
-
-			{% include "_partials/_flash.html.twig" %}
-			{# 	{% if app.user and app.user.isverified == false %}
-																																								<div class="alert-warning" role="alert">
-																																									<div class="alert-message">
-																																										<strong>Votre compte n'est pas encore activé</strong>. Renvoyer le
-																																										<a href="{{ path('app_resend_verif') }}">lien d'activation</a>
-																																									</div>
-																																								</div>
-																																							{% endif %} #}
-		</header>
-		{# fin menu #}
-		{# fin header #}
-
-		{% block body %}{% endblock %}
-
-		<footer>
-			<div class="head-footer">
-				<div>
-					<p>N’hésitez pas à nous contacter et à nous rejoindre sur nos réseaux sociaux</p>
+					</li>
+				</ul>
+				<div class="navbar-logo">
+					<a href="{{path('app_home')}}" class="navbar-brand" id="logo"><img src="{{asset('./img/logo-80px.svg')}}" alt="Logo Les Ruchers des Gobelins"></a>
+					<a href="{{path('app_home')}}" class="navbar-brand" id="marque">Les Ruchers des Gobelins</a>
 					<a href="{{path('app_contact')}}" class="btnContact">Contact</a>
+
+
 				</div>
-			</div>
-			<div class="group widthDesktop">
-				<div class="first">
-					<p class="name">Les Ruchers des Gobelins</p>
-					<p class="networks">
-						<a href="#" target="blank">
-							<i class="fa-brands fa-square-facebook"></i>
-						</a>
-						<a href="#" target="blank"></a>
-						<i class="fa-brands fa-instagram"></i>
-					</p>
-				</div>
-				<div class="second">
-					<div class="secondOne">
-						<p class="bold">Pages du site</p>
-						<p>
-							<a href="{{path('app_home')}}">Accueil</a>
-						</p>
-						<p>
-							<a href="{{path('app_produits')}}">Produits</a>
-						</p>
-						<p>
-							<a href="{{path('app_blog_index')}}">Blog</a>
-						</p>
-						<p>
-							<a href="{{path('app_mentions_legales')}}">Mentions Légales</a>
-						</p>
-						<p>
-							<a href="{{path('app_confidentialite')}}">Politique de confidentialité</a>
-						</p>
-					</div>
-					<div class="secondTwo">
-						<p class="bold">Coordonnées</p>
+			</nav>
 
+		</div>
 
-						<p>1 rue de la Cour Marette</p>
-						<p>27950 LA HEUNIERE</p>
-						<p>Téléphone</p>
+		{# **************
+																																																																																																											message flash 
+																																																																																																									*****************#}
 
-					</div>
-				</div>
-			</div>
-
-
-			<p class="fin">© 2024 Les Ruchers des Gobelins. Tous les droits sont réservés. | site créé par
-				<a href="amandinnov.fr" target="blank">Amand'Innov Web</a>
-			</p>
-		</footer>
-
-		{% block javascripts %}
-			{% block importmap %}
-				{{ importmap('app') }}
-			{% endblock %}
-			<script src="{{asset('./js/menu.js')}}"></script>
-
-		{% endblock %}
+		{% include "_partials/_flash.html.twig" %}
+		{# 	{% if app.user and app.user.isverified == false %}
+																																																																	<div class="alert-warning" role="alert">
+																																																																		<div class="alert-message">
+																																																																			<strong>Votre compte n'est pas encore activé</strong>. Renvoyer le
+																																																																			<a href="{{ path('app_resend_verif') }}">lien d'activation</a>
+																																																																		</div>
+																																																																	</div>
+																																																																{% endif %} #}
 	</body>
-</html>
+</html></header>{# fin menu #}{# fin header #}{% block body %}{% endblock %}<footer>
+<div class="head-footer">
+	<div>
+		<p>N’hésitez pas à nous contacter et à nous rejoindre sur nos réseaux sociaux</p>
+		<a href="{{path('app_contact')}}" class="btnContact">Contact</a>
+	</div>
+</div>
+<div class="group widthDesktop">
+	<div class="first">
+		<p class="name">Les Ruchers des Gobelins</p>
+		<p class="networks">
+			<a href="#" target="blank">
+				<i class="fa-brands fa-square-facebook"></i>
+			</a>
+			<a href="#" target="blank"></a>
+			<i class="fa-brands fa-instagram"></i>
+		</p>
+	</div>
+	<div class="second">
+		<div class="secondOne">
+			<p class="bold">Pages du site</p>
+			<p>
+				<a href="{{path('app_home')}}">Accueil</a>
+			</p>
+			<p>
+				<a href="{{path('app_produits')}}">Produits</a>
+			</p>
+			<p>
+				<a href="{{path('app_blog_index')}}">Blog</a>
+			</p>
+			<p>
+				<a href="{{path('app_mentions_legales')}}">Mentions Légales</a>
+			</p>
+			<p>
+				<a href="{{path('app_confidentialite')}}">Politique de confidentialité</a>
+			</p>
+		</div>
+		<div class="secondTwo">
+			<p class="bold">Coordonnées</p>
+
+
+			<p>1 rue de la Cour Marette</p>
+			<p>27950 LA HEUNIERE</p>
+			<p>Téléphone</p>
+
+		</div>
+	</div>
+</div>
+
+
+<p class="fin">© 2024 Les Ruchers des Gobelins. Tous les droits sont réservés. | site créé par
+	<a href="amandinnov.fr" target="blank">Amand'Innov Web</a>
+</p></footer>{% block javascripts %}
+{% block importmap %}
+	{{ importmap('app') }}
+{% endblock %}
+<script src="{{asset('./js/menu.js')}}"></script>{% endblock %}</body></body></html>
