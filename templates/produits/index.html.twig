@@ -17,46 +17,56 @@
 {% endblock %}
 
 {% block body %}
-	<main id="produits">
+	<main
+		id="produits">
 
-
-		<section class="printemps">
+		{# section printemps #}
+		<section class="impair">
 			<div class="widthDesktop">
 				<h1>Produits</h1>
-				<h2>Miels de printemps</h2>
+				<h2>Miel de printemps</h2>
 				<div
 					class="texteImg">
 					{# image #}
 					<div class="dfCenter">
 						<div>
-							<img src="{{asset('./img/miel-printemps-300px.webp')}}" alt="Miel de printemps">
+							<img src="{{asset('./img/produit-300px.webp')}}" alt="pot de miel de printemps">
 
 						</div>
 					</div>
 					{# fin image #}
 					{# texte #}
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam magni ad veritatis. Quisquam quod minus voluptate? Earum laboriosam perferendis non harum reiciendis temporibus impedit officia? Sunt fugit sint amet excepturi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, libero fugiat. Iste dolorum, accusamus quod accusantium velit nemo laudantium suscipit magnam itaque sapiente cum voluptas maxime, minima eius at inventore?
+					<p>Vendu en pot de 250g, 500g ou 1Kg.
+						<br><br>
+						Miel clair, à cristalisation rapide.
+						<br>
+						Peut être à base de nectar de colza et d’aubépine.
 					</p>
 					{# fin texte #}
 				</div>
 			</div>
 		</section>
+		{# fin section printemps #}
 
-		{# section produits #}
-		<section class="ete backgroundImage lastSection">
+		{# section été #}
+		<section class="pair backgroundImage">
 			<div class="widthDesktop">
 				<h2>Miel d'été</h2>
 				<div
 					class="texteImg">
 
 					{# texte #}
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam magni ad veritatis. Quisquam quod minus voluptate? Earum laboriosam perferendis non harum reiciendis temporibus impedit officia? Sunt fugit sint amet excepturi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, libero fugiat. Iste dolorum, accusamus quod accusantium velit nemo laudantium suscipit magnam itaque sapiente cum voluptas maxime, minima eius at inventore?
+					<p>Vendu en pot de 250g, 500g ou 1Kg.
+						<br><br>
+						Miel foncé, à cristalisation lente.
+						<br>
+						Peut être à base de nectar de chataignier, de ronce ou de sarrasin.
 					</p>
 					{# fin texte #}
 					{# image #}
 					<div class="dfCenter">
 						<div>
-							<img src="{{asset('./img/miel-ete-300px.webp')}}" alt="pot de miel">
+							<img src="{{asset('./img/miel-ete-300px.webp')}}" alt="pot de miel d'été">
 
 						</div>
 					</div>
@@ -66,6 +76,32 @@
 		</section>
 
 		{# fin section été #}
+
+		{# section essaim #}
+		<section class="impair lastSection">
+			<div class="widthDesktop">
+				<h2>Essaim hiverné</h2>
+				<div
+					class="texteImg">
+					{# image #}
+					<div class="dfCenter">
+						<div>
+							<img src="{{asset('./img/abeilles-fond-300px.jpeg')}}" alt="abeilles">
+
+						</div>
+					</div>
+					{# fin image #}
+					{# texte #}
+					<p>Essaim d’abeilles Buckgast
+						<br><br>
+						vendu sur 3 cadres de couvains et un cadre de réserve.
+					</p>
+					{# fin texte #}
+				</div>
+			</div>
+		</section>
+
+		{# fin section essaim #}
 	</main>
 
 {% endblock %}

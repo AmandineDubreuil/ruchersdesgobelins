@@ -1,6 +1,7 @@
 /* entête */
 #home .entete {
-  background-image: url("../../assets/img/abeilles-accueil-576px.jpeg");
+  /* background-image: url("../../assets/img/abeilles-accueil-576px.jpeg"); */
+  background-image: url("../../assets/img/fond-abeilles.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -74,7 +75,8 @@
   /* entête */
 
   #home .entete {
-    background-image: url("../../assets/img/abeilles-accueil-3768px.webp");
+    /* background-image: url("../../assets/img/abeilles-accueil-3768px.webp"); */
+    background-image: url("../../assets/img/fond-abeilles.jpg");
   }
 
   #home .entete .accroche {

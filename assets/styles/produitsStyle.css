@@ -1,3 +1,12 @@
-#produits .ete .dfCenter {
+#produits .pair .dfCenter {
     margin-top: 1rem;
+}
+
+#produits img {
+    max-width: 225px;
+}
+
+
+#produits img {
+    max-width: 225px;
 }
