@@ -247,7 +247,7 @@ h3,
   align-items: center;
   padding-top: 1rem;
 }
-.menu .navbar .navbar-head i {
+.menu .navbar i  {
   color: var(--color-three);
 }
 
@@ -267,8 +267,18 @@ h3,
 
   background-color: #ffffff;
 }
+.menu .navbar .navbar-menu-items-li .navbar-link {
 
+  border: none !important;
+}
 
+#userMenu {
+  padding: 1rem 2rem .7rem 3rem;
+}
+#userMenuBloc {
+  border-bottom: 2px var(--color-three) solid;
+
+}
 /* navbar-menu*/
 .menu .navbar .navbar-menu {
   display: flex;
@@ -281,7 +291,7 @@ h3,
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-image: url("../img/background-alveoles-jaunes-2000px.webp");
+  background-image: url("../img/bandeau-alveoles-1920x200px.jpg");
   background-attachment: fixed;
   background-size: auto;
   background-repeat: no-repeat;
