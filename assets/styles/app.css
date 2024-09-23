@@ -72,10 +72,7 @@ img {
 }
 
 .backgroundImage {
-  /* background-image: url("../img/background-alveoles-jaunes-576px.webp");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat; */
+ 
   background-color: var(--color-one-extralight);
 }
 /* fin images */
@@ -291,10 +288,7 @@ h3,
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-image: url("../img/bandeau-alveoles-1920x200px.jpg");
-  background-attachment: fixed;
-  background-size: auto;
-  background-repeat: no-repeat;
+ background-color: #fff;
   margin-top: 1rem;
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
@@ -461,9 +455,7 @@ footer .fin a {
     display: none;
   }
 
-  /* .backgroundImage {
-    background-image: url("../img/background-alveoles-jaunes-2000px.webp");
-  } */
+
   /* fin images  */
 
   /*  texte / image */
@@ -509,7 +501,6 @@ footer .fin a {
     position: absolute;
     left: 0;
     opacity: 1;
-    /* background-color: #ffffff; */
     height: auto !important;
 
   }
@@ -527,7 +518,7 @@ footer .fin a {
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 25px;
+    margin-top: 44px;
   }
   .menu #marque {
     font-size: 3rem;
@@ -543,11 +534,17 @@ footer .fin a {
   .menu .navbar-menu-items-li .navbar-link {
     width: auto !important;
   }
+  .menu .navbar i {
+    color: var(--color-six);
+  }
   .menu .navbar .navbar-menu .navbar-link:hover {
     font-weight: bold;
     text-decoration: underline;
   }
-
+  #userMenuBloc {
+    border-bottom: none;
+  
+  }
   /* fin menu */
 
   /**********************

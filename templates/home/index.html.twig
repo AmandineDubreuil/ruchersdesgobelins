@@ -7,6 +7,7 @@
 {% endblock %}
 
 {% block stylesheets %}
+	
 	{# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> #}
 	{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 
@@ -57,8 +58,8 @@
 				{# image geoportail #}
 				<div class="dfCenter mapGeoportail">
 
-									<iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=1.3044431899716489,49.08707339636089&z=11&l0=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR.CV::GEOPORTAIL:OGC:WMTS(1)&v1=ADMIN_EXPRESS::GEOPORTAIL:GPP:TMS(1)&l2=GEOGRAPHICALNAMES.NAMES::GEOPORTAIL:OGC:WMTS(1)&d3=5200741(1)&permalink=yes" allowfullscreen></iframe>
-									
+									{# <iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=1.3044431899716489,49.08707339636089&z=11&l0=GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN25TOUR.CV::GEOPORTAIL:OGC:WMTS(1)&v1=ADMIN_EXPRESS::GEOPORTAIL:GPP:TMS(1)&l2=GEOGRAPHICALNAMES.NAMES::GEOPORTAIL:OGC:WMTS(1)&d3=5200741(1)&permalink=yes" allowfullscreen></iframe> #}
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10457.277697380487!2d1.4052113428841095!3d49.061562665569454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6cadad6fff843%3A0xd1809d223fccc053!2s1%20Rue%20de%20la%20Cr%20Marette%2C%2027950%20La%20Heuni%C3%A8re!5e0!3m2!1sfr!2sfr!4v1726739084508!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 				{# fin image geoportail #}
 			</div>
@@ -170,7 +171,7 @@
 					{# image #}
 					<div class="dfCenter">
 						<div>
-							<img src="{{asset('./img/abeilles-300px.jpeg')}}" alt="abeilles">
+							<img src="{{asset('./img/abeilles-processus-300px.jpeg')}}" alt="abeilles">
 
 						</div>
 					</div>

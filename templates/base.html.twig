@@ -8,16 +8,19 @@
 			{% block title %}Les Ruchers des Gobelins
 			{% endblock %}
 		</title>
+
+		<link
+		rel="icon" href="{{asset('./img/favicon/favicon.ico')}}">
 		{# <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> #}
 		{% block stylesheets %}{% endblock %}
 
 		{# {% block javascripts %}
-																																											{% block importmap %}
-																																												{{ importmap('app') }}
-																																											{% endblock %}
-																																											<script src="{{asset('./js/menu.js')}}"></script>
-																																								
-																																										{% endblock %} #}
+																																															{% block importmap %}
+																																																{{ importmap('app') }}
+																																															{% endblock %}
+																																															<script src="{{asset('./js/menu.js')}}"></script>
+																																												
+																																														{% endblock %} #}
 	</head>
 	<body>
 
@@ -59,15 +62,19 @@
 
 
 							<li>
-								<ul id="userMenuBloc" >
+								<ul id="userMenuBloc">
 									<li id="userMenu">
 										<i class="fa-solid fa-user"></i>
 
 									</li>
 									<li>
 										<ul class="navbar-menu-items-li">
-											<li><a class="navbar-link"href="{{path('app_user_index')}}">Mon compte</a></li>
-											<li><a class="navbar-link"href="{{path('app_logout')}}">Déconnexion</a></li>
+											<li>
+												<a class="navbar-link" href="{{path('app_user_index')}}">Mon compte</a>
+											</li>
+											<li>
+												<a class="navbar-link" href="{{path('app_logout')}}">Déconnexion</a>
+											</li>
 										</ul>
 
 									</li>
@@ -93,20 +100,17 @@
 		</div>
 
 		{# **************
-																																																																																																											message flash 
-																																																																																																									*****************#}
+																																																																																																															message flash 
+																																																																																																													*****************#}
 
 		{% include "_partials/_flash.html.twig" %}
-		{# 	{% if app.user and app.user.isverified == false %}
-																																																																	<div class="alert-warning" role="alert">
-																																																																		<div class="alert-message">
-																																																																			<strong>Votre compte n'est pas encore activé</strong>. Renvoyer le
-																																																																			<a href="{{ path('app_resend_verif') }}">lien d'activation</a>
-																																																																		</div>
-																																																																	</div>
-																																																																{% endif %} #}
+
 	</body>
-</html></header>{# fin menu #}{# fin header #}{% block body %}{% endblock %}<footer>
+</html></header>{# fin menu #}{# fin header #}{% block body %}{% endblock %}{# 
+	
+	FOOTER 
+	
+	#}<footer>
 <div class="head-footer">
 	<div>
 		<p>N’hésitez pas à nous contacter et à nous rejoindre sur nos réseaux sociaux</p>
@@ -156,8 +160,7 @@
 </div>
 
 
-<p class="fin">© 2024 Les Ruchers des Gobelins. Tous les droits sont réservés. | site créé par
-	<a href="amandinnov.fr" target="blank">Amand'Innov Web</a>
+<p class="fin">© 2024 Les Ruchers des Gobelins. Tous les droits sont réservés.
 </p></footer>{% block javascripts %}
 {% block importmap %}
 	{{ importmap('app') }}

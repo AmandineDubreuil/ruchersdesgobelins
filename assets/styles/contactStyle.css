@@ -1,21 +1,18 @@
 #contact section {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
 
 #contact h1 {
-    margin-top: 0;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
 }
 #contact .imageFormulaire {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
-
 
 #contact .formulaire .form-group {
   display: flex;
@@ -32,21 +29,18 @@
 #contact .formulaire .form-group input,
 #contact .formulaire .form-group textarea {
   width: 100%;
-  padding: .5rem .7rem;
+  padding: 0.5rem 0.7rem;
   border: 1px solid var(--color-five-light);
   border-radius: 4px;
 }
 
 #contact .formulaire .form-group textarea {
-       min-height: 15rem; 
-
+  min-height: 15rem;
 }
 #contact .btnOk {
-
-    width: 100%;
-    text-align: center;
-    background: linear-gradient(315deg, transparent 5%, var(--color-three) 5%);
-   
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(315deg, transparent 5%, var(--color-three) 5%);
 }
 
 /* ********************
@@ -55,28 +49,22 @@
   
   ***************/
 
-  @media screen and (min-width: 576px) {
-
-
-    #contact .formulaire {
-        width: 45%;
-    }
-    #contact .formulaire .prenomNom {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        
-        }
-        #contact .formulaire .prenomNom .form-group  {
-width: 45%;
-min-width: 6rem;
-            
-            }
-    #contact .imageFormulaire {
-        margin-top: 0;
-        width: 45%;
-    }
-
-
+@media screen and (min-width: 576px) {
+  #contact .formulaire {
+    width: 45%;
   }
+  #contact .formulaire .prenomNom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #contact .formulaire .prenomNom .form-group {
+    width: 45%;
+    min-width: 6rem;
+  }
+  #contact .imageFormulaire {
+    margin-top: 0;
+    width: 45%;
+  }
+}
